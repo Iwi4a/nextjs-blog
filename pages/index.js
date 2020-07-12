@@ -12,6 +12,8 @@ export default function Index({ allPosts }) {
   const morePosts = allPosts.slice(1)
   return (
     <>
+    this is main
+  
       <Layout>
         <Head>
           <title>Next.js Blog Example with {CMS_NAME}</title>
