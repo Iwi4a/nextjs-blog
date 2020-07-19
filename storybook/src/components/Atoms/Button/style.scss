@@ -1,0 +1,64 @@
+@import '../../../styles/_base.scss'; 
+@import '../../../styles/_variables.scss'; 
+
+.btn {
+    max-width: 220px;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    padding: 0 10px;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align:top;
+    line-height: 50px;
+    font-weight: 500;
+    transition: 0.2s border ease-in-out, 0.2s background ease-in-out;
+    &__icon {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 5px;
+    }
+    &--main {
+        background-color: transparent;
+        color: $btn-type-main;
+        text-align: center;
+        .btn__icon {
+            g {
+                fill: $btn-type-main;
+            }
+        }
+        
+        &__border {  
+            top: 0;
+            left: 10px;
+            height: 50px;
+            position: absolute;
+            width: calc(100% - 20px);
+            rect {
+                fill: none;
+                stroke-width: 5;
+                stroke: $btn-type-main;
+                animation: btnMainIn 1.35s forwards cubic-bezier(0.19, 1, 0.22, 1);
+            }
+        }
+        &:hover {
+            background-color: rgba($btn-type-main-hover, 0);
+            border-color:$btn-type-main-hover;
+            color: $btn-type-main-hover;
+            rect {
+                stroke: $btn-type-main-hover;
+                animation: btnMainOut 1.35s forwards cubic-bezier(0.19, 1, 0.22, 1);
+            }
+        }
+        @keyframes btnMainIn {
+            0% { stroke-dasharray: 15, 375; stroke-dashoffset: 15; }
+            100% { stroke-dasharray: 422, 0; stroke-width: 5; }
+        }
+        @keyframes btnMainOut {
+            0% { stroke-dasharray: 422, 0; stroke-width: 5; }
+            100% { stroke-dasharray: 15, 375; stroke-dashoffset: 15; }
+        }
+    }
+}
