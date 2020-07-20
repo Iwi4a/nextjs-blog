@@ -14,16 +14,20 @@
     vertical-align:top;
     line-height: 50px;
     font-weight: 500;
+    text-align: center;
+    overflow: hidden;
     transition: 0.2s border ease-in-out, 0.2s background ease-in-out;
     &__icon {
         display: inline-block;
         vertical-align: middle;
         margin-left: 5px;
+        position: relative;
+        z-index: 2;
     }
     &--main {
         background-color: transparent;
         color: $btn-type-main;
-        text-align: center;
+        
         .btn__icon {
             g {
                 fill: $btn-type-main;
@@ -47,6 +51,11 @@
             background-color: rgba($btn-type-main-hover, 0);
             border-color:$btn-type-main-hover;
             color: $btn-type-main-hover;
+            .btn__icon {
+                g {
+                    fill: $btn-type-main-hover;
+                }
+            }
             rect {
                 stroke: $btn-type-main-hover;
                 animation: btnMainOut 1.35s forwards cubic-bezier(0.19, 1, 0.22, 1);
@@ -59,6 +68,93 @@
         @keyframes btnMainOut {
             0% { stroke-dasharray: 422, 0; stroke-width: 5; }
             100% { stroke-dasharray: 15, 375; stroke-dashoffset: 15; }
+        }
+    }
+    &--secondary {
+        color: $btn-type-secondary-color;
+        animation: btnIn 0.8s forwards ease-in-out;
+        border: 2px solid $btn-type-secondary;
+        span {
+            color: $btn-type-secondary-color;
+            position: relative;
+            z-index: 2;
+        }
+        .btn__icon {
+            g, path, text {
+                stroke: $btn-type-secondary-color;
+                fill: $btn-type-secondary-color;
+            }
+        }
+        &:before {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            background-color: $btn-type-secondary;
+            content: '';
+            position: absolute;
+            left: calc(50% - 20px);
+            top: calc(50% - 10px);
+            border-radius: 50%;
+            animation: leftBallIn 1s forwards ease-in-out;
+
+        }
+        &:after {
+            display: inline-block;
+            background-color: $btn-type-secondary;
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            animation: rightBallIn 1s forwards ease-in-out;
+        }
+        &:hover {
+            color: $btn-type-secondary;
+            text-decoration: none;
+            animation: btnOut 0.8s forwards ease-in-out;
+            .btn__icon {
+                g, path, text {
+                    stroke: $btn-type-secondary;
+                    fill: $btn-type-secondary;
+                }
+            }
+            span {
+                color: $btn-type-secondary;
+            }
+            &:before {
+                animation: leftBallOut 0.35s forwards ease-in;
+            }
+            &:after {
+                animation: rightBallOut 0.35s forwards ease-in;
+            }
+        }
+        @keyframes btnIn {
+            0% { background-color:rgba(65, 74, 80, 0); }
+            50% { background-color:rgba(65, 74, 80, 0.5); }
+            100% { background-color:$btn-type-secondary; }
+          }
+        @keyframes btnOut {
+            0% { background-color:$btn-type-secondary; }
+            50% { background-color:rgba(65, 74, 80, 0.5); }
+            100% { background-color:rgba(65, 74, 80, 0); }
+        }
+        @keyframes leftBallOut {
+            0%   { top:calc(50% - 75px); left:calc(50% - 75px); width:150px; height:150px; }
+            50%  { top:calc(30% - 25px); left:calc(30% - 25px); width:50px; height:50px; }
+            100% { top:calc(120% - 10px); left:calc(0% - 150px); width:0px; height:0px; }
+        }
+        @keyframes leftBallIn {
+            0% { top:calc(120% - 5px); left:calc(0% - 150px); width:0px; height:0px; }
+            50%  { top:calc(30% - 25px); left:calc(30% - 25px); width:50px; height:50px; }
+            100%   { top:calc(50% - 75px); left:calc(50% - 75px); width:150px; height:150px; }
+        }
+        @keyframes rightBallOut {
+            0%   { top:calc(50% - 75px); right:calc(50% - 75px); width:150px; height:150px; }
+            50%  { top:calc(30% - 25px); right:calc(30% - 25px); width:50px; height:50px; }
+            100% { top:calc(120% - 10px); right:calc(0% - 150px); width:0px; height:0px; }
+        }
+        @keyframes rightBallIn {
+            0% { top:calc(120% - 5px); right:calc(0% - 150px); width:0px; height:0px; }
+            50%  { top:calc(30% - 25px); right:calc(30% - 25px); width:50px; height:50px; }
+            100%   { top:calc(50% - 75px); right:calc(50% - 75px); width:150px; height:150px; }
         }
     }
 }
