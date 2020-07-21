@@ -1,0 +1,72 @@
+.mobile-nav {
+    display: inline-block; 
+    transition: all 0.2s ease-in-out;
+    width: 50px;
+    height: 50px;
+    position:relative;
+    background-color:transparent;
+    cursor:pointer;
+    .mobile-container {
+        width:36px;
+		height:36px;
+        position:relative;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        margin:auto;
+        @media screen and (min-width: 768px) {
+            width:50px;
+            height:50px;
+        }
+        .mline-1,
+        .mline-2,
+        .mline-3 {
+            height:2px;
+            background:#fff;
+            width:100%;
+            max-width:150px;
+            display:block;
+            position:absolute;
+            border-radius:2px;
+            transition:all 0.2s ease-in-out;
+        }
+        .mline-1 {
+            top:20%;
+            
+        }
+        .mline-2 {
+            bottom:50%;
+            margin:auto;
+            opacity:1;
+            width:70%;
+        }
+        .mline-3 {
+            bottom:20%;
+        }
+        &:hover {
+            .mline-2 {
+                width:100%;
+            }
+        }
+        &.mobile-open {
+            .mline-1 {
+                transform:translateY(9px) rotate(-45deg);
+                top:32%;
+            }
+            .mline-2 {
+                opacity:0;
+                @media screen and (min-width: 768px) {
+                    bottom:calc(50% + -1px);
+                }
+            }
+            .mline-3 {
+                bottom:30%;
+                transform:translateY(-3px) translateY(50%) rotate(45deg);
+                @media screen and (min-width: 768px) {
+                    transform:translateY(-8px) rotate(45deg);
+                }
+            }
+        }
+    }
+}
