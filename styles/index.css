@@ -13,3 +13,7 @@
 /* Stop purging. */
 
 /* Your own custom utilities */
+body {
+    margin: 0;
+    padding: 0;
+}

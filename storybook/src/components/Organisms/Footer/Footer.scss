@@ -1,0 +1,52 @@
+@import './../../../styles/variables';
+
+.site-footer {
+    background-color: $footer-main-background;
+    text-align: center;
+	padding: 25px 0 30px;
+	vertical-align:top;
+	position:relative;
+	.social {
+        position: relative;
+		text-align:center;
+        margin-bottom:30px;
+        z-index: 2;
+		a {
+            display: inline-block;
+            color:#fff;
+            margin: 0 10px;
+            svg {
+                transition: 0.2s ease-in-out all;
+                path {
+                    fill: #fff;
+                }
+                &:hover {
+                    opacity: 0.8;
+                    transform: scale(1.2);
+                }
+            }
+		}
+	}
+	&__copyright {
+        position: relative;
+        color: #fff;
+        font-size: $small-font;
+        margin: 0;
+        z-index: 2;
+	}
+	.filter {
+		width:100%;
+		height:100%;
+        top:0;
+        left:0;
+        position:absolute;
+        background-image: -webkit-repeating-radial-gradient(center center,rgba(0,0,0,.2),rgba(0,0,0,.2) 1px,transparent 0,transparent 100%);
+        background-image: repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+        background-size: 3px 3px;
+        z-index: 1;
+	}
+}
+
+
+
+
