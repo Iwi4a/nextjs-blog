@@ -14,5 +14,5 @@ export const footer = () => {
 }
 
 export default { 
-    title: 'Molecules/Footer',
+    title: 'Organisms/Footer',
 };
