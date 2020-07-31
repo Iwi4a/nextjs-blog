@@ -18,6 +18,7 @@ module.exports = {
     stories: ['../src/**/**/**/**/stories.js'],
     addons: [
         '@storybook/addon-backgrounds/register',
+        '@storybook/addon-viewport/register',
         '@storybook/addon-actions/register',
     ]
 };

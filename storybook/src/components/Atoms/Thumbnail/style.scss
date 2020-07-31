@@ -1,0 +1,83 @@
+@import './../../../styles/_variables.scss';
+
+.thumbnail {
+    width: 100%;
+    position: relative;
+    background-color:#fff;
+    padding: 20px 25px;
+    transition: all ease-in-out 0.6s;
+    box-sizing: border-box;
+    &__image {
+        background-size: cover;
+        position: absolute;
+        z-index: 2;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        left: calc(50% - 50px);
+        top: 20px;
+        animation: mymoveOut 1s;
+        animation-fill-mode: forwards;
+        overflow: hidden;
+        background-position: center center;
+        .filter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color:rgba(0,0,0,0.1);
+        }
+    }
+    &__container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        padding: 120px 25px 30px;
+        box-sizing: border-box;
+        h3 {
+            color: $thumbnail-text-colour;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 0.7em;
+            margin-top: 25px;
+        }
+        p {
+            color: $thumbnail-text-colour;
+            font-size: $small-plus-font;
+            text-align: center;
+        }
+        span {
+            font-weight: $bold-font;
+            color: $thumbnail-link-colour; 
+            text-align: center;
+            display: block;
+        }
+    }
+    &:hover {
+        .thumbnail__image {
+            animation: mymoveIn 0.4s;
+            animation-fill-mode: forwards;
+            left:0;
+            .filter {
+                background-color:rgba(0,0,0,0.4);
+            }
+        }
+        .thumbnail__container {
+            h3, p, span {
+                color:#fff;
+            }
+        }
+    }
+}
+/* front thumbnails */
+@keyframes mymoveIn {
+    0% { top:20px; }
+    50% { top:0%; }
+    100% { width:100%; height:100%; top:0; bottom:0; left:0; right:0; border-radius:0; }  
+}
+@keyframes mymoveOut {
+    0% { width:100%; height:100%; top:0; bottom:0; left:0; right:0; border-radius:0; }
+    50% { top:0%; }
+    100% { width:100px;  height:100px; border-radius:50%; left:calc(50% - 50px); top:20px; }
+}
