@@ -1,7 +1,10 @@
 /* TYPOGRAPHY */
 $small-font: 12px;
 $small-plus-font: 14px;
+$regular-font: 18px;
+$regular-plus-font: 21px;
 
+$regular-font: 400;
 $bold-font: 700;
 
 /* BUTTONS */
@@ -14,6 +17,15 @@ $btn-type-secondary-color: #fff;
 /* THUMBNAILS */
 $thumbnail-text-colour: #525D63;
 $thumbnail-link-colour: #231f20;
+
+/* TIMELINE */
+$timeline-dot-size: 30px;
+$timeline-cell-width: 500px;
+$timeline-cell-padding-mobile: 30px 15px 15px 15px; 
+$timeline-cell-padding-right: 10px 15px 10px 50px; 
+$timeline-cell-padding-left: 10px 50px 10px 15px; 
+$timeline-dot-background: #fdde00;
+
 
 /* FOOTER */
 $footer-main-background: #414a50;
