@@ -4,7 +4,8 @@
     position: relative;
     max-width: 100%;
     padding: $timeline-cell-padding-mobile;
-
+    box-sizing: border-box;
+    
     &__container {
         transition: 0.2s all ease-in-out;
         &__title {
@@ -59,19 +60,20 @@
             left: auto;
             &:after {
                 border-top: 6px solid transparent;
-                left: auto;
+                left: unset;
                 top: 50%;
+                transform: translate(-50%, -50%);
             }
         }
         &--left {
             padding: $timeline-cell-padding-right;
             .TimelineCell__dot {
                 left: 0;
-                transform: translate(-100%, -50%);
+                transform: translate(-50%, -50%);
                 &:after {
-                    left: -4px;
-                    border-right: 6px solid $timeline-dot-background;
-                    transform: translate(-50%, -50%);
+                    right: -16px;
+                    border-left: 6px solid $timeline-dot-background;
+                    
                 }
             }
         }
@@ -79,11 +81,10 @@
             padding: $timeline-cell-padding-left;
             .TimelineCell__dot {
                 right: 0;
-                transform: translate(100%, -50%);
+                transform: translate(50%, -50%);
                 &:after {
-                    right: -16px;
-                    border-left: 6px solid $timeline-dot-background;
-                    transform: translate(-50%, -50%);
+                    left: -4px;
+                    border-right: 6px solid $timeline-dot-background;
                 }
             }
         }
