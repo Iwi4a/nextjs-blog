@@ -8,6 +8,7 @@
     
     &__container {
         transition: 0.2s all ease-in-out;
+        position: relative;
         &__title {
             font-size: $regular-plus-font;
             font-weight: $bold-font;

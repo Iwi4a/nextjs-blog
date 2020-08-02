@@ -3,7 +3,7 @@ import SVG from './../SVG/SVG';
 import propTypes from 'prop-types';
 import './style.scss';
 
-export const Button = ({children, icon, type, ...rest}) => {
+const Button = ({children, icon, type, ...rest}) => {
     return (
         <div className={`btn btn--${type}`} {...rest}>
             { type === 'main' ? 
@@ -25,3 +25,5 @@ Button.propTypes = {
 Button.defautProps = {
     type: 'main',
 }
+
+export default Button;

@@ -2,9 +2,9 @@ import React from 'react';
 import propTypes from 'prop-types';
 import './style.scss';
 
-const TimelineCell = ({title, date, alignRight, backgroundColour, children}) => {
+const TimelineCell = ({title, date, alignRight, className, backgroundColour, children}) => {
     return (
-        <div style={{ background: backgroundColour }} className={`TimelineCell ${alignRight ? "TimelineCell--right" : "TimelineCell--left"}`}>
+        <div style={{ background: backgroundColour }} className={`TimelineCell ${className} ${alignRight ? "TimelineCell--right" : "TimelineCell--left"}`}>
             <div className="TimelineCell__container">
                 <h4 className="TimelineCell__container__title">{title}</h4>
                 <span className="TimelineCell__container__date">{date}</span>
@@ -21,12 +21,14 @@ TimelineCell.propTypes = {
     alignRight: propTypes.bool,
     children: propTypes.string,
     backgroundColour: propTypes.string,
+    className: propTypes.string,
 }
 
 TimelineCell.defaultProps = {
     alignRight: false,
-    backgroundColour: "#FFF"
+    backgroundColour: "#FFF",
+    className: '',
 }
 
 
-export default TimelineCell
+export default TimelineCell;

@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .Timeline {
     position: relative;
     &:after {
@@ -7,13 +9,38 @@
 		width: 1px;
 		top: 0;
 		bottom: 0;
-		border-right:#f4f4f4 2px solid;
+		border-right: $timeline-line-colour 2px solid;
         left: 50%;
         transform: translateX(-50%);
     }
     .TimelineCell {
+        transition: 0.2s ease-in-out all;
         &--left {
             margin: 0 0 0 auto;
+        }
+        /* Before Enter Animation */
+            &__container {
+                opacity: 0;
+            }
+            &--left {
+                .TimelineCell__container {
+                    left: $timeline-animation-margin;
+                }
+            }
+            &--right {
+                .TimelineCell__container {
+                    left: -$timeline-animation-margin;
+                }
+            }
+
+        /* On Enter Animation */
+        &--onscreen {
+            .TimelineCell {
+                &__container {
+                    opacity: 1;
+                    left: 0;
+                }
+            }
         }
     }
 }

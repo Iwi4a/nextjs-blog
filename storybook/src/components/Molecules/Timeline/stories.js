@@ -35,6 +35,22 @@ export const defaultTimeline = () => {
     return (<Timeline timeline={timelineMock} />)
 }
 
+export const withAnimations = () => {
+    return (
+    <div>
+        <h3 style={{marginBottom: '500px'}}>Scroll down to see animations</h3>
+        <Timeline timeline={timelineMock} />
+    </div>)
+}
+
+export const withBackground = () => {
+    return (
+    <div>
+        <h3 style={{marginBottom: '500px'}}>Scroll down to see animations</h3>
+        <Timeline timeline={timelineMock} backgroundColour="#f8f5f2" />
+    </div>)
+}
+
 export default {
     title: 'Molecules/Timeline'
 }
