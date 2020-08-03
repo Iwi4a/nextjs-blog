@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Typist from 'react-typist';
 import './style.scss';
 
@@ -24,11 +24,11 @@ const SelfTypingText = (props) => {
 }
 
 SelfTypingText.propTypes = {
-    children: propTypes.string.isRequired,
-    backspace: propTypes.string,
-    backspaceCount: propTypes.number,
-    backspaceDelay: propTypes.number,
-    startDelay: propTypes.number,
+    children: PropTypes.string.isRequired,
+    backspace: PropTypes.string,
+    backspaceCount: PropTypes.number,
+    backspaceDelay: PropTypes.number,
+    startDelay: PropTypes.number,
 }
 
 SelfTypingText.defaultProps = {

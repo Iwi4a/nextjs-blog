@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import IconDownload from './icons/download.svg';
 import IconPaperPlane from './icons/paper-plane.svg';
 import IconLinkedin from './icons/icon-linkedin.svg';
@@ -47,7 +47,7 @@ const SVG = ({ icon, ...rest }) => {
 }
 
 SVG.propTypes = {
-    icon: propTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
 }
 
 export default SVG;

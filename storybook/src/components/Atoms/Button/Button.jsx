@@ -1,6 +1,6 @@
 import React from 'react';
 import SVG from './../SVG/SVG';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import './style.scss';
 
 const Button = ({children, icon, type, ...rest}) => {
@@ -18,8 +18,8 @@ const Button = ({children, icon, type, ...rest}) => {
 }
 
 Button.propTypes = {
-    type: propTypes.string,
-    children: propTypes.string,
+    type: PropTypes.string,
+    children: PropTypes.string,
 }
 
 Button.defautProps = {

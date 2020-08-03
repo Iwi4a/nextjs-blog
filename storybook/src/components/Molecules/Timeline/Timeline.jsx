@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import TimelineCell from '../../Atoms/TimelineCell/TimelineCell';
 import VisibilitySensor from 'react-visibility-sensor';
 import TrackVisibility from 'react-on-screen';
@@ -30,10 +30,10 @@ const Timeline = ({ className, timeline, backgroundColour, style, ...rest}) => {
 };
 
 Timeline.propTypes = {
-    timeline: propTypes.array.isRequired,
-    backgroundColour: propTypes.string,
-    className: propTypes.string,
-    style: propTypes.object,
+    timeline: PropTypes.array.isRequired,
+    backgroundColour: PropTypes.string,
+    className: PropTypes.string,
+    style: PropTypes.object,
 }
 
 Timeline.defaultProps = {

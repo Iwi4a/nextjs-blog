@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import './style.scss';
 
 const TimelineCell = ({title, date, alignRight, className, backgroundColour, children}) => {
@@ -16,12 +16,12 @@ const TimelineCell = ({title, date, alignRight, className, backgroundColour, chi
 }
 
 TimelineCell.propTypes = {
-    title: propTypes.string.isRequired,
-    date: propTypes.string.isRequired,
-    alignRight: propTypes.bool,
-    children: propTypes.string,
-    backgroundColour: propTypes.string,
-    className: propTypes.string,
+    title: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    alignRight: PropTypes.bool,
+    children: PropTypes.string,
+    backgroundColour: PropTypes.string,
+    className: PropTypes.string,
 }
 
 TimelineCell.defaultProps = {
