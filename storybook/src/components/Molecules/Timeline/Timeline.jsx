@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TimelineCell from '../../Atoms/TimelineCell/TimelineCell';
-import VisibilitySensor from 'react-visibility-sensor';
 import TrackVisibility from 'react-on-screen';
 import './styles.scss';
 
