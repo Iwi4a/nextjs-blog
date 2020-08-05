@@ -1,0 +1,42 @@
+@import './../../../styles/_variables.scss';
+
+.MenuItem {
+    color:#fff;
+    display: block;
+    position: relative;
+    text-transform: uppercase;
+    padding: $menu-item-padding;
+    font-size: $regular-plus-font;
+    transition: all ease-in-out 0.3s;
+    span {
+        &:before {
+            content: '';
+            left: 0;
+            top: 50%;
+            width: 0;
+            height: 0;
+            position: absolute;
+            display: inline-block;
+            border: 6px solid transparent;
+            transform: translateY(-50%);
+        }
+    }
+
+    &:hover {
+        background-color: $menu-item-background;
+        span {
+            &:before {
+                border-left: 6px solid #fff;
+            }
+        }
+    }
+    &.active {
+        background-color: $menu-item-background;
+        span {
+            color: $menu-item-chevron-colour;
+            &:before {
+                border-left: 6px solid $menu-item-chevron-colour;
+            }
+        }
+    }
+}
