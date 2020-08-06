@@ -1,0 +1,51 @@
+@import '../../../styles/_variables.scss';
+
+.NavCloseButton {
+	background-color: $navclose-background;
+	padding: 8px 12px 8px 8px;
+	display: inline-block;
+	visibility: hidden;
+	position: relative;
+	cursor: pointer;
+	transition: all ease-in-out $elements-speed-normal;
+	z-index: 2;
+	&:before {
+		content: '';
+		width: 6px;
+		height: 6px;
+		background-color: transparent;
+		position: absolute;
+		left: 3px;
+        top: -9px;
+        border: 6px solid transparent;
+		border-left: 6px solid #414a50;
+		z-index: -1;
+		transition:all ease-in-out $elements-speed-normal;
+		transform: rotate(45deg);
+		opacity:0;
+	}
+	svg {
+        transition:all ease-in-out $elements-speed-normal;
+        padding: 0 0 0 5px;
+        path {
+            fill: #fff;
+        }
+	}
+	&:hover {
+		svg {
+            padding: 0 5px 0 0;
+        }
+	}
+
+    &--visible {
+        visibility:visible;
+        margin-left:-8px;
+        i {
+            opacity:1;
+        }
+        &:before {
+            opacity:1;
+            bottom: calc(100% - 6px);
+        }
+    }
+}

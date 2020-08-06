@@ -1,10 +1,10 @@
 import React from 'react';
 import SVGLogo from './logo.svg';
 
-const Logo = ({ className }) => {
+const Logo = props => {
     return (
         <>
-            <SVGLogo />
+            <SVGLogo {...props} />
         </>
     )
 }

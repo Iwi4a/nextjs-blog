@@ -6,8 +6,8 @@
     position: relative;
     text-transform: uppercase;
     padding: $menu-item-padding;
-    font-size: $regular-plus-font;
-    transition: all ease-in-out 0.3s;
+    font-size: $regular-font;
+    transition: all ease-in-out $elements-speed-normal;
     span {
         &:before {
             content: '';
@@ -38,5 +38,8 @@
                 border-left: 6px solid $menu-item-chevron-colour;
             }
         }
+    }
+    @media screen and (min-width: $breakpoint-md) {
+        font-size: $regular-plus-font;
     }
 }

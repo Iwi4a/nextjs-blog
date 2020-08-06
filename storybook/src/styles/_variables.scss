@@ -1,3 +1,6 @@
+/* GENERAL */
+$elements-speed-normal: 0.3s;
+
 /* TYPOGRAPHY */
 $small-font: 12px;
 $small-plus-font: 14px;
@@ -6,6 +9,13 @@ $regular-plus-font: 21px;
 
 $regular-font: 400;
 $bold-font: 700;
+
+/* BREAKPOINTS */
+$breakpoint-xs: 480px;
+$breakpoint-sm: 767px;
+$breakpoint-md: 991px;
+$breakpoint-lg: 1023px;
+$breakpoint-xl: 1440px;
 
 /* BUTTONS */
 $btn-type-main: #fcdf10;
@@ -36,6 +46,13 @@ $slider-dots-active: #231f20;
 $menu-item-padding: 15px 40px;
 $menu-item-background: #121212;
 $menu-item-chevron-colour: #fcdf10;
+
+/* NAV CLOSE BUTTON */
+$navclose-background: #121212;
+
+/* NAVIGATION */
+$navigation-background: #191919;
+$navigation-social-background: #121212;
 
 /* FOOTER */
 $footer-main-background: #414a50;

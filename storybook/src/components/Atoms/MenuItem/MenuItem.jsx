@@ -4,11 +4,11 @@ import './styles.scss';
 
 const MenuItem = props => {
     return (
-        <a className={`MenuItem ${props.className} ${props.active ? 'active' : ''}`}>
+        <div className={`MenuItem ${props.className} ${props.active ? 'active' : ''}`}>
             <span>
                 {props.title} 
             </span>
-        </a>
+        </div>
     )
 }
 
