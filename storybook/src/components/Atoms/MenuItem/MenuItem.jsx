@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-const MenuItem = props => {
+const MenuItem = ({ className, active, title, ...rest}) => {
     return (
-        <div className={`MenuItem ${props.className} ${props.active ? 'active' : ''}`}>
+        <div className={`MenuItem ${className} ${active ? 'active' : ''}`} {...rest}>
             <span>
-                {props.title} 
+                {title} 
             </span>
         </div>
     )
