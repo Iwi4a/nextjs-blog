@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from './Footer';
 import SVG from '../../Atoms/SVG/SVG';
 
-export const footer = () => {
+export const Default = () => {
     return (
         <Footer>
             <a href="https://www.linkedin.com/"><SVG icon="linkedin" /></a>

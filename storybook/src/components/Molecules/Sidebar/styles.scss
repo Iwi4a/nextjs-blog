@@ -1,0 +1,61 @@
+@import './../../../styles/_variables.scss';
+
+.Sidebar {
+    padding: 25px 0 0;
+    right: -$navigation-offset;
+    top: 0;
+    bottom: 0;
+    width: 280px;
+    position: fixed;
+    min-height: 650px;
+    background-color: $sidebar-background;
+    transition: right ease-in-out $elements-speed-normal;
+    @media screen and (min-width: $breakpoint-md) {
+        padding: 55px 0 0;
+    }
+    &--open {
+        right: 0;
+    }
+    &__logo {
+        display: block;
+        margin:0 auto 25px;
+        @media screen and (min-width: $breakpoint-md) {
+            margin: 0 auto 45px;
+        }
+    }
+    &__links {
+        a {
+            text-decoration: none;
+        }
+    }
+    &__social {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: $sidebar-social-background;
+        padding: 15px 0 10px;
+        text-align: center;
+        transform: translateY(-100%);
+        &__link {
+            margin: 0 10px;
+            svg {
+                transition: all ease-in-out $elements-speed-normal;
+                g, path {
+                    fill: white;
+                }
+            }
+            &:hover {
+                svg {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+    ul, ol {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+}

@@ -1,34 +1,38 @@
 import React from 'react';
 import Navigation from './Navigation';
 import MenuItems from '../../Atoms/MenuItem/MenuItem';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
 
 const navOptionsMock = [
-    { title: 'Option 1', href: 'option1' },
-    { title: 'Option 2', href: 'option2' },
-    { title: 'Option 3', href: 'option3' },
-    { title: 'Option 4', href: 'option4' },
-    { title: 'Option 5', href: 'option5' }
+    { title: 'Option 1', url: 'option1' },
+    { title: 'Option 2', url: 'option2' },
+    { title: 'Option 3', url: 'option3' },
+    { title: 'Option 4', url: 'option4' },
+    { title: 'Option 5', url: 'option5' }
 ];
 
 const socialLinksMock = [
-    { id: 'linkedin', href:'#' },
-    { id: 'facebook', href:'#' },
-    { id: 'github', href:'#' }
+    { id: 'linkedin', url:'#' },
+    { id: 'facebook', url:'#' },
+    { id: 'github', url:'#' }
 ];
 
-const menuOptions = navOptionsMock.map(option => {
-    return <li key={option.title}><a href="#"><MenuItems title={option.title} /></a></li>
-})
 
+const MenuOptionsList = () => {
+    const menuButtons = navOptionsMock.map(option => {
+        return <li><a href={option.url}><MenuItems title={option.title} /></a></li>
+    })
+    return (
+        <ul>
+            {menuButtons}
+        </ul>
+    )
+}
 
-export const navigation = () => {
+export const Default = () => {
     return (
         <div>
-            <Navigation showCloseButton={boolean('Toggle close button', true)} isOpen={boolean('Toggle menu', true)} socialMediaUrls={socialLinksMock}>
-                <ul>
-                    {menuOptions}
-                </ul>
+            <Navigation navOptions={<MenuOptionsList />} socialMediaUrls={socialLinksMock}>
+                <div style={{height: '2000px', width:'100%', background: '#050505', color: 'white' }}>Mock Page Content</div>
             </Navigation>
         </div>
     )
@@ -36,5 +40,9 @@ export const navigation = () => {
 
 export default {
     title: 'Organisms/Navigation',
-    decorators: [withKnobs],
+    parameters: {
+        background: [
+            { name: 'dark background', value: '#ccc', default: true },
+        ]
+    }
 }

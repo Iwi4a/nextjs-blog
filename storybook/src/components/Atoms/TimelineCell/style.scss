@@ -11,11 +11,11 @@
         position: relative;
         &__title {
             font-size: $regular-plus-font;
-            font-weight: $bold-font;
+            font-weight: $bold-weight;
             margin: 0 0 0.5em;
         }
         span, p {
-            font-weight: $regular-font;
+            font-weight: $normal-weight;
             font-size: $small-plus-font;
         }
     }

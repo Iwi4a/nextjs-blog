@@ -7,8 +7,8 @@ $small-plus-font: 14px;
 $regular-font: 18px;
 $regular-plus-font: 21px;
 
-$regular-font: 400;
-$bold-font: 700;
+$normal-weight: 400;
+$bold-weight: 700;
 
 /* BREAKPOINTS */
 $breakpoint-xs: 480px;
@@ -51,9 +51,12 @@ $menu-item-chevron-colour: #fcdf10;
 $navclose-background: #121212;
 $navclose-shadow-color: #bbbbbb;
 
+/* SIDEBAR */
+$sidebar-background: #191919;
+$sidebar-social-background: #121212;
+
 /* NAVIGATION */
-$navigation-background: #191919;
-$navigation-social-background: #121212;
+$navigation-offset: 280px;
 
 /* FOOTER */
 $footer-main-background: #414a50;

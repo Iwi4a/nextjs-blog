@@ -1,36 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Logo from '../../Atoms/Logo/Logo';
-import SVG from '../../Atoms/SVG/SVG';
-import NavCloseButton from '../../Atoms/NavCloseButton/NavCloseButton';
+import MenuIcon from '../../Atoms/MenuIcon/MenuIcon';
+import Sidebar from '../../Molecules/Sidebar/Sidebar';
 import './styles.scss';
 
-const Navigation = ({ children, isOpen, showCloseButton, socialMediaUrls }) => {
-    const socialMedia = socialMediaUrls.map(data => {
-        return (
-            <a key={data.id} className="Navigation__social__link" href={data.href}>
-                <SVG icon={data.id} />
-            </a>
-        )
-    })
+const Navigation = ({ children, navOptions, ...rest }) => {
+    const [isSidebarOpen, setSidebarState] = useState(false);
+    const [isCloseButtonVisible, setCloseButtonVisibility] = useState(false);
+
+    
+    const showCloseButtonHandler = () => {
+        if (window.pageYOffset > 250) {
+            setCloseButtonVisibility(true);
+        } else {
+            setCloseButtonVisibility(false);
+        }
+    }
+
+    const toggleSidebarHandler = () => {
+        if (!isSidebarOpen) {
+            if (window.pageYOffset > 250) {
+                setCloseButtonVisibility(true);
+            } else {
+                window.addEventListener('scroll', showCloseButtonHandler);
+            }
+        } else {
+            window.removeEventListener('scroll', showCloseButtonHandler);
+        }
+        setSidebarState(!isSidebarOpen);
+    }
+
     return (
-        <div className={`Navigation ${isOpen ? 'Navigation--open' : ''}`}>
-            <Logo className='Navigation__logo' />
-            <div className="Navigation__links">
-                {children}
-            </div>
-            <NavCloseButton visible={showCloseButton} />
-            <div className="Navigation__social">
-                {socialMedia}
-            </div>
+        <div className={`Navigation ${isSidebarOpen ? 'Navigation--open' : ''}`} {...rest}>
+            <MenuIcon onClick={toggleSidebarHandler} />
+            <Sidebar isSidebarOpen={isSidebarOpen} showCloseButton={isCloseButtonVisible} closeButtonHandler={toggleSidebarHandler}>
+                {navOptions}
+            </Sidebar>
+            {children}
         </div>
-    )
+    );
 }
 
 Navigation.propTypes = {
     isOpen: PropTypes.bool,
     socialMediaUrls: PropTypes.array,
     showCloseButton: PropTypes.bool,
+    navOptions: PropTypes.element,
 }
 
 Navigation.defaultProps = {

@@ -10,8 +10,8 @@ const MenuIcon = (props) => {
     }
 
     return (
-        <div className="mobile-nav mobile" onClick={iconStateHandler}>
-            <div className={`mobile-container ${iconState ? 'mobile-open' : ''}`} >
+        <div className="MenuIcon mobile" onClick={iconStateHandler}>
+            <div className={`MenuIcon__container ${iconState ? 'MenuIcon__container--open' : ''}`} >
                 <div className="mline-1"></div>
                 <div className="mline-2"></div>
                 <div className="mline-3"></div>
