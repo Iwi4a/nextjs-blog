@@ -15,7 +15,7 @@ module.exports = {
         const newConfig = {...config, module: { ...config.module, rules: [...rules, ...customWebpack.module.rules] }};
         return newConfig
     },
-    stories: ['../src/**/**/**/**/stories.js'],
+    stories: ['../storybook/src/**/**/**/**/stories.js'],
     addons: [
         '@storybook/addon-backgrounds/register',
         '@storybook/addon-viewport/register',
