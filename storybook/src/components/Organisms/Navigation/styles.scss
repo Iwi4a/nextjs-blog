@@ -6,8 +6,12 @@
     left: 0;
     .MenuIcon {
         position: absolute;
-        right: 90px;
-        top: 70px;
+        right: 25px;
+        top: 35px;
+        @media screen and (min-width: $breakpoint-sm) {
+            right: 90px;
+            top: 70px;
+        }
     }
     &--open {
         left: -$navigation-offset;

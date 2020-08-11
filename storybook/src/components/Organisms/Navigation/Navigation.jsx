@@ -4,11 +4,10 @@ import MenuIcon from '../../Atoms/MenuIcon/MenuIcon';
 import Sidebar from '../../Molecules/Sidebar/Sidebar';
 import './styles.scss';
 
-const Navigation = ({ children, navOptions, ...rest }) => {
+const Navigation = ({ children, navOptions, socialMediaUrls, ...rest }) => {
     const [isSidebarOpen, setSidebarState] = useState(false);
     const [isCloseButtonVisible, setCloseButtonVisibility] = useState(false);
 
-    
     const showCloseButtonHandler = () => {
         if (window.pageYOffset > 250) {
             setCloseButtonVisibility(true);
@@ -33,7 +32,7 @@ const Navigation = ({ children, navOptions, ...rest }) => {
     return (
         <div className={`Navigation ${isSidebarOpen ? 'Navigation--open' : ''}`} {...rest}>
             <MenuIcon onClick={toggleSidebarHandler} />
-            <Sidebar isSidebarOpen={isSidebarOpen} showCloseButton={isCloseButtonVisible} closeButtonHandler={toggleSidebarHandler}>
+            <Sidebar isSidebarOpen={isSidebarOpen} showCloseButton={isCloseButtonVisible} closeButtonHandler={toggleSidebarHandler} socialMediaUrls={socialMediaUrls}>
                 {navOptions}
             </Sidebar>
             {children}

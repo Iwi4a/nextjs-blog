@@ -8,6 +8,7 @@
     padding: $menu-item-padding;
     font-size: $regular-font;
     transition: all ease-in-out $elements-speed-normal;
+    cursor: pointer;
     span {
         &:before {
             content: '';

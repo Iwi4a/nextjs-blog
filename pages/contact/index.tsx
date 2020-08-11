@@ -5,9 +5,7 @@ import Footer from '../../storybook/src/components/Organisms/Footer/Footer';
 const Contact = (): any => {
     return (
         <div>
-            
-
-            <Footer />
+            This is contact page
         </div>
     )
 }

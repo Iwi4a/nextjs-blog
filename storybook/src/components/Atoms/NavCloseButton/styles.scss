@@ -5,6 +5,7 @@
 	padding: 8px 12px 8px 8px;
 	display: inline-block;
 	opacity: 0;
+	visibility: hidden;
 	position: relative;
 	cursor: pointer;
 	border-radius: 2px;
@@ -39,7 +40,8 @@
 	}
 
     &--visible {
-        opacity: 1;
+		opacity: 1;
+		visibility: visible;
         margin-left: -11px;
         i {
             opacity:1;
