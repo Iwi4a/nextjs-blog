@@ -47,7 +47,7 @@
             font-size: $small-plus-font;
             text-align: center;
         }
-        span {
+        span, a {
             font-weight: $bold-weight;
             color: $thumbnail-link-colour; 
             text-align: center;
@@ -64,7 +64,7 @@
             }
         }
         .thumbnail__container {
-            h3, p, span {
+            h3, p, span, a {
                 color:#fff;
             }
         }

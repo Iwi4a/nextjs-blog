@@ -1,15 +1,17 @@
 import React from 'react';
 import { getHomepageData } from '../lib/api';
 
+import { ThumbnailsCollection } from '../storybook'
+
 export async function getStaticProps() {
-  const data = await getHomepageData();
-  return { props: { ...data.page } }; 
+  const res = await getHomepageData();
+  return { props: { ...res.data } }; 
 };
 
 const Index = (props) => {
   return (
     <div>
-        Lets begin with the homepage
+        <ThumbnailsCollection collection={props.page.acfHome.frontThumbnails} />
     </div>
   )
 }
