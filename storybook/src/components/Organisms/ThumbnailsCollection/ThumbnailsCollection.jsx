@@ -8,7 +8,7 @@ const ThumbnailsCollection = ({ collection }) => {
     if (collection.length < 1) return <p>Please add thumbnail collection</p>
     const thumbnails = collection.map(thumb => {
         const ThumbnailButton = () => {
-            return <Link href={`/${thumb.thumbnailLink.slug}`}>{thumb.thumbnailButton}</Link>
+            return <Link href={`/${thumb.thumbnailLink.slug}`}><a>{thumb.thumbnailButton}</a></Link>
         }
         return <Thumbnail title={thumb.thumbnailTitle} image={thumb.thumbnailImage.mediaItemUrl} button={<ThumbnailButton />}>{thumb.thumbnailIntroText}</Thumbnail>
     })
