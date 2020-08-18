@@ -1,4 +1,5 @@
 import SVG from './src/components/Atoms/SVG/SVG';
+import Button from './src/components/Atoms/Button/Button';
 import MenuIcon from './src/components/Atoms/MenuIcon/MenuIcon';
 import MenuItem from './src/components/Atoms/MenuItem/MenuItem';
 import Thumbnail from './src/components/Atoms/Thumbnail/Thumbnail';
@@ -10,6 +11,7 @@ import Footer from './src/components/Organisms/Footer/Footer';
 
 export {
     SVG,
+    Button,
     MenuIcon,
     MenuItem,
     Thumbnail,

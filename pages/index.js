@@ -1,5 +1,6 @@
 import React from 'react';
 import { getHomepageData } from '../lib/api';
+import ContactSection from '../components/ContactSection';
 import { 
   ThumbnailsCollection,
   HomepageHero
@@ -15,6 +16,9 @@ const Index = (props) => {
     <div>
         <HomepageHero image={props.page.acfHeader.headerImage.mediaItemUrl} title={props.page.acfHome.headerTitle} backgroundStyle={{ backgroundPosition: '0 100%' }} />
         <ThumbnailsCollection collection={props.page.acfHome.frontThumbnails} />
+        <ContactSection cv={props.contactSection.acfContact.cvLink.mediaItemUrl}>
+          {props.contactSection.acfContact.contactFooterText}
+        </ContactSection>
     </div>
   )
 }
