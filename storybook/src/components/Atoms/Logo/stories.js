@@ -12,8 +12,11 @@ export const defaultLogo = () => {
 export default {
     title: 'Atoms/Logo',
     parameters: {
-        backgrounds: [
-            { name: 'dark background', value: '#050505', default: true }
-        ]
+        backgrounds: {
+            default: 'Dark',
+            values: [
+                { name: 'Dark', value: '#050505', }
+            ],
+        }
     }
 }

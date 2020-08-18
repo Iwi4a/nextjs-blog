@@ -28,7 +28,7 @@ const MenuOptionsList = () => {
     )
 }
 
-export const Default = () => {
+export const Basic = () => {
     return (
         <div>
             <Navigation navOptions={<MenuOptionsList />} socialMediaUrls={socialLinksMock}>
@@ -41,8 +41,11 @@ export const Default = () => {
 export default {
     title: 'Organisms/Navigation',
     parameters: {
-        background: [
-            { name: 'dark background', value: '#ccc', default: true },
-        ]
+        backgrounds: {
+            default: 'Dark',
+            values: [
+                { name: 'Dark', value: '#ccc', }
+            ],
+        }
     }
 }

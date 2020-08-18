@@ -14,8 +14,11 @@ export const thumbnail = () => {
 export default {
     title: 'Atoms/Thumbnail',
     parameters: {
-        backgrounds: [
-            { name: 'Grey background', value: '#f8f5f2', default: true }
-        ]
+        backgrounds: {
+            default: 'Dark',
+            values: [
+                { name: 'Dark', value: '#ccc', }
+            ],
+        }
     }
 }

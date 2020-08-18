@@ -19,8 +19,11 @@ export default {
     title: 'Atoms/TimelineCell',
     decorators: [withKnobs],
     parameters: {
-        backgrounds: [
-            { name: 'Grey background', value: '#f8f5f2', default: true }
-        ]
+        backgrounds: {
+            default: 'Dark',
+            values: [
+                { name: 'Dark', value: '#ccc', }
+            ],
+        }
     }
 }

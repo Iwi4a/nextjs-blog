@@ -22,7 +22,7 @@ const menuOptions = navOptionsMock.map(option => {
 })
 
 
-export const Default = () => {
+export const Basic = () => {
     return (
         <div>
             <Sidebar showCloseButton={boolean('Toggle close button', true)} isOpen={boolean('Toggle menu', true)} socialMediaUrls={socialLinksMock}>

@@ -7,8 +7,11 @@ export const ScrollDownButton = () => <ScrollDown onClick={action('Scroll-down-c
 export default {
     title: 'Atoms/ScrollDown', 
     parameters: {
-        backgrounds: [
-            { name: 'dark background', value: '#ccc', default: true }
-        ]
+        backgrounds: {
+            default: 'Dark',
+            values: [
+                { name: 'Dark', value: '#ccc', }
+            ],
+        }
     }
 };

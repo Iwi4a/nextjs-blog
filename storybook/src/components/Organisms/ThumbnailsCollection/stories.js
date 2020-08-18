@@ -25,7 +25,7 @@ const thumbsListMock = [
     }
 ];
 
-export const Default = () => {
+export const Basic = () => {
     return <ThumbnailsCollection collection={thumbsListMock} />
 }
 

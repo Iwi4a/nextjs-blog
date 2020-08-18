@@ -25,8 +25,11 @@ export default {
     title: 'Atoms/MenuItem',
     decorators: [withKnobs],
     parameters: {
-        backgrounds: [
-            { name: 'dark background', value: '#ccc', default: true }
-        ]
+        backgrounds: {
+            default: 'Dark',
+            values: [
+                { name: 'Dark', value: '#ccc', }
+            ],
+        }
     }
 }
