@@ -16,7 +16,7 @@ const SelfTypingText = (props) => {
             {props.children}
             { props.backspace?.length > 0 ?
                 <span>
-                    <Typist.Backspace count={props?.backspaceCount} delay={props.backspaceDelay} />
+                    <Typist.Backspace count={props?.backspaceCount} stdTypingDelay={1000} delay={props.backspaceDelay} />
                     {props.backspace}
                 </span> : '' }
         </Typist>
