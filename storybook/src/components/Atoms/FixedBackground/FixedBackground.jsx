@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.scss'; 
 
-const FixedBackground = ({ img, height, fullScreen, children, hideFilter, hideDots, ...rest }) => {
+const FixedBackground = ({ image, height, fullScreen, children, hideFilter, hideDots, style, ...rest }) => {
     const propStyles = {
-        backgroundImage: `url("${img}")`,
-        height: fullScreen ? "100vh" : height
+        backgroundImage: `url("${image}")`,
+        height: fullScreen ? "100vh" : height,
+        ...style,
     }
     return (
         <div className="FixedBackground" style={propStyles} {...rest}>
@@ -18,19 +19,21 @@ const FixedBackground = ({ img, height, fullScreen, children, hideFilter, hideDo
 }
 
 FixedBackground.propTypes = {
-    img: PropTypes.string,
+    image: PropTypes.string,
     height: PropTypes.string,
     fullScreen: PropTypes.bool,
     hideFilter: PropTypes.bool,
     hideDots: PropTypes.bool,
+    style: PropTypes.object,
 }
 
 FixedBackground.defaultProps = {
-    img: '',
+    image: '',
     height: '500px',
     fullScreen: false,
     hideFilter: false,
     hideDots: false,
+    style: {},
 }
 
 export default FixedBackground

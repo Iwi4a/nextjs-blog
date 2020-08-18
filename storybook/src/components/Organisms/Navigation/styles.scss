@@ -4,10 +4,23 @@
     position: relative;
     transition: all ease-in-out $elements-speed-normal;
     left: 0;
+    z-index: 2;
+    &__logo {
+        left: 25px;
+        position: absolute;
+        transform: scale(0.5);
+        z-index: 10;
+        @media screen and (min-width: $breakpoint-sm) {
+            top: 35px;
+            left: 90px;
+            transform: scale(1);
+        }
+    }
     .MenuIcon {
         position: absolute;
         right: 25px;
         top: 35px;
+        z-index: 10;
         @media screen and (min-width: $breakpoint-sm) {
             right: 90px;
             top: 70px;

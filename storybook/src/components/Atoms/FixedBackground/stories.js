@@ -9,9 +9,9 @@ const mockData = {
 
 const Template = (args) => <div style={{ height: '150vh' }}><FixedBackground {...args} /></div>
 
-export const Basic = () => <Template img={mockData.image} />
-export const FullScreen = () => <Template img={mockData.image} fullScreen />
-export const HiddenFilters = () => <Template img={mockData.image} fullScreen hideFilter={true} hideDots={true} />
+export const Basic = () => <Template image={mockData.image} />
+export const FullScreen = () => <Template image={mockData.image} fullScreen />
+export const HiddenFilters = () => <Template image={mockData.image} fullScreen hideFilter={true} hideDots={true} />
 
 export default {
     title: 'Atoms/FixedBackground',
