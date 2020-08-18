@@ -11,7 +11,7 @@ import '../styles/styles.scss';
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    <Navigation navOptions={<NavOptions />} socialMediaUrls={socialMediaAccounts}>
+    <Navigation inView={Component.name} navOptions={<NavOptions />} socialMediaUrls={socialMediaAccounts}>
       <Component {...pageProps} />
       <PageFooter />
     </Navigation>

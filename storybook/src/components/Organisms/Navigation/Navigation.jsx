@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Logo from '../../Atoms/Logo/Logo';
@@ -6,9 +6,14 @@ import MenuIcon from '../../Atoms/MenuIcon/MenuIcon';
 import Sidebar from '../../Molecules/Sidebar/Sidebar';
 import './styles.scss';
 
-const Navigation = ({ children, navOptions, socialMediaUrls, hideLogo, ...rest }) => {
+const Navigation = ({ children, navOptions, socialMediaUrls, hideLogo, inView, ...rest }) => {
     const [isSidebarOpen, setSidebarState] = useState(false);
     const [isCloseButtonVisible, setCloseButtonVisibility] = useState(false);
+    
+    useEffect(() => {
+        setSidebarState(false);
+        setCloseButtonVisibility(false);
+    }, [inView]);
 
     const showCloseButtonHandler = () => {
         if (window.pageYOffset > 250) {
@@ -30,11 +35,10 @@ const Navigation = ({ children, navOptions, socialMediaUrls, hideLogo, ...rest }
         }
         setSidebarState(!isSidebarOpen);
     }
-
     return (
         <div className={`Navigation ${isSidebarOpen ? 'Navigation--open' : ''}`} {...rest}>
             { hideLogo ? null : <Link href="/"><a><Logo className={`Navigation__logo`} /></a></Link> }
-            <MenuIcon onClick={toggleSidebarHandler} />
+            <MenuIcon isActive={isSidebarOpen} onClick={toggleSidebarHandler} />
             <Sidebar isSidebarOpen={isSidebarOpen} showCloseButton={isCloseButtonVisible} closeButtonHandler={toggleSidebarHandler} socialMediaUrls={socialMediaUrls}>
                 {navOptions}
             </Sidebar>
