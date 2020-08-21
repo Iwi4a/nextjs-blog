@@ -1,9 +1,17 @@
-import React from 'react'
+import React from 'react';
+import { getAboutpageData } from '../../lib/api';
+import TimelineSection from '../../components/TimelineSection';
 
-const About = () => {
-return (
+
+export async function getStaticProps() {
+    const res = await getAboutpageData();
+    return { props: { ...res.data } }; 
+  };
+
+const About = (props) => {
+    return (
         <div>
-            About page
+            <TimelineSection timeline={props.page.acfAbout.timeline} />
         </div>
     )
 }

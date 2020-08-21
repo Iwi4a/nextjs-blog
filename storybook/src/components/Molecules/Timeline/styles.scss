@@ -2,7 +2,7 @@
 
 .Timeline {
     position: relative;
-    &:after {
+    &:before {
 		content:'';
 		position: absolute;
 		display: inline-block;
@@ -15,8 +15,9 @@
     }
     .TimelineCell {
         transition: 0.2s ease-in-out all;
+        margin-bottom: 25px;
         &--left {
-            margin: 0 0 0 auto;
+            margin: 0 0 25px auto;
         }
         /* Before Enter Animation */
             &__container {

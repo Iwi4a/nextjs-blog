@@ -4,6 +4,8 @@ import MenuIcon from './src/components/Atoms/MenuIcon/MenuIcon';
 import MenuItem from './src/components/Atoms/MenuItem/MenuItem';
 import Thumbnail from './src/components/Atoms/Thumbnail/Thumbnail';
 
+import Timeline from './src/components/Molecules/Timeline/Timeline';
+
 import Navigation from './src/components/Organisms/Navigation/Navigation';
 import HomepageHero from './src/components/Organisms/HomepageHero/HomepageHero';
 import ThumbnailsCollection from './src/components/Organisms/ThumbnailsCollection/ThumbnailsCollection';
@@ -15,6 +17,7 @@ export {
     MenuIcon,
     MenuItem,
     Thumbnail,
+    Timeline,
     Footer,
     Navigation,
     HomepageHero,

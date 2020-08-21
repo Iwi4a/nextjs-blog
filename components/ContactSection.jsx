@@ -2,12 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { Button } from '../storybook';
-import '../styles/components/ContactSection.scss';
+import styles from 'styled-components';
 
 const ContactSection = ({ cv, children, ...rest}) => {
+
+    const ContactSection = styles.section`
+        padding: 50px 0 80px;
+    `;
+
+    const Container = styles.div`
+        max-width: 1200px;
+        border-top: 1px solid #ccc;
+        padding: 40px 15px 0;
+        margin: 0 auto;
+        text-align: center;
+    `;
+
     return (
-        <div className="ContactSection">
-            <div className="ContactSection__container">
+        <ContactSection>
+            <Container>
                 {/* <h4>{children}</h4> */}
                 <a target="_blank" href={cv}>
                     <Button type="main" icon="download">
@@ -19,8 +32,8 @@ const ContactSection = ({ cv, children, ...rest}) => {
                         Contact
                     </Button>
                 </Link>
-            </div>
-        </div>
+            </Container>
+        </ContactSection>
     )
 }
 
