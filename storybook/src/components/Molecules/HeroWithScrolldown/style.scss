@@ -1,0 +1,10 @@
+@import '../../../styles/_variables.scss';
+
+.HeroWithScrolldown {
+    text-align: center;
+    &__scroll-down {
+        position: absolute;
+        bottom: 15px;
+        width: 100%;
+    }
+}

@@ -48,17 +48,13 @@ const Navigation = ({ children, navOptions, socialMediaUrls, hideLogo, inView, .
 }
 
 Navigation.propTypes = {
-    isOpen: PropTypes.bool,
     hideLogo: PropTypes.bool,
     socialMediaUrls: PropTypes.array,
-    showCloseButton: PropTypes.bool,
     navOptions: PropTypes.element,
 }
 
 Navigation.defaultProps = {
-    isOpen: false,
     hideLogo: false,
-    showCloseButton: false,
     socialMediaUrls: [],
 }
 

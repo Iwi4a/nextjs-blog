@@ -7,6 +7,7 @@ import Thumbnail from './src/components/Atoms/Thumbnail/Thumbnail';
 import Timeline from './src/components/Molecules/Timeline/Timeline';
 
 import Navigation from './src/components/Organisms/Navigation/Navigation';
+import AboutHero from './src/components/Organisms/AboutHero/AboutHero';
 import HomepageHero from './src/components/Organisms/HomepageHero/HomepageHero';
 import ThumbnailsCollection from './src/components/Organisms/ThumbnailsCollection/ThumbnailsCollection';
 import Footer from './src/components/Organisms/Footer/Footer';
@@ -20,6 +21,7 @@ export {
     Timeline,
     Footer,
     Navigation,
+    AboutHero,
     HomepageHero,
     ThumbnailsCollection,
 }

@@ -10,7 +10,7 @@ const Thumbnail = (props) => {
             </div>
             <div className="thumbnail__container">
                 <h3>{props.title}</h3>
-                <p>{props.children}</p>
+                <div dangerouslySetInnerHTML={{ __html: props.children}} />
                 <span>{props.button}</span>
             </div>
         </div>
@@ -20,7 +20,7 @@ const Thumbnail = (props) => {
 Thumbnail.propTypes = {
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
-    button: PropTypes.string.isRequired,
+    button: PropTypes.element.isRequired,
     children: PropTypes.string.isRequired,
 }
 

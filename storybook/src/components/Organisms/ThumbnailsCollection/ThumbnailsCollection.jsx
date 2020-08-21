@@ -6,11 +6,11 @@ import './styles.scss';
 
 const ThumbnailsCollection = ({ collection }) => {
     if (collection.length < 1) return <p>Please add thumbnail collection</p>
-    const thumbnails = collection.map(thumb => {
+    const thumbnails = collection.map((thumb, idx) => {
         const ThumbnailButton = () => {
             return <Link href={`/${thumb.thumbnailLink.slug}`}><a>{thumb.thumbnailButton}</a></Link>
         }
-        return <Thumbnail title={thumb.thumbnailTitle} image={thumb.thumbnailImage.mediaItemUrl} button={<ThumbnailButton />}>{thumb.thumbnailIntroText}</Thumbnail>
+        return <Thumbnail key={idx} title={thumb.thumbnailTitle} image={thumb.thumbnailImage.mediaItemUrl} button={<ThumbnailButton />}>{thumb.thumbnailIntroText}</Thumbnail>
     })
     return (
         <div className="ThumbnailCollection">
