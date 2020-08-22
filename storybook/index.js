@@ -3,6 +3,7 @@ import Button from './src/components/Atoms/Button/Button';
 import MenuIcon from './src/components/Atoms/MenuIcon/MenuIcon';
 import MenuItem from './src/components/Atoms/MenuItem/MenuItem';
 import Thumbnail from './src/components/Atoms/Thumbnail/Thumbnail';
+import FixedBackground from './src/components/Atoms/FixedBackground/FixedBackground';
 
 import Timeline from './src/components/Molecules/Timeline/Timeline';
 
@@ -18,6 +19,7 @@ export {
     MenuIcon,
     MenuItem,
     Thumbnail,
+    FixedBackground,
     Timeline,
     Footer,
     Navigation,

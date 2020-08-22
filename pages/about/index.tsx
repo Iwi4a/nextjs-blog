@@ -9,7 +9,7 @@ import styles from 'styled-components';
 export async function getStaticProps() {
     const res = await getAboutpageData();
     return { props: { ...res.data } }; 
-  };
+};
 
 const Section = styles.section`
     background-color: #f8f5f2;
