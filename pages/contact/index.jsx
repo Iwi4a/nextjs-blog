@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ContactForm from '../../components/ContactForm';
 import {FixedBackground} from '../../storybook';
 import { getContactpageData } from '../../lib/api';
 import style from 'styled-components';
@@ -26,6 +27,7 @@ const FormTitle = style.div`
 `;
 
 class Contact extends Component {
+
     render() {
         return (
             <>
@@ -37,6 +39,7 @@ class Contact extends Component {
                     height="60vh" />
                 <FormContainer>
                     <FormTitle dangerouslySetInnerHTML={{ __html: this.props.page.acfContact.contactFormText}} />
+                    <ContactForm />
                 </FormContainer>
                 <FixedBackground
                     image={this.props.page.acfContact.contactBottom.mediaItemUrl}
