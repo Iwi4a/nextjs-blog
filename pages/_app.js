@@ -10,10 +10,17 @@ import '../styles/styles.scss';
 
 
 export default function MyApp({ Component, pageProps }) {
-  return (
-    <Navigation inView={Component.name} navOptions={<NavOptions />} socialMediaUrls={socialMediaAccounts}>
-      <Component {...pageProps} />
-      <PageFooter />
-    </Navigation>
-  )
+    const renderLogo = () => {
+        let hideLogo = false;
+        if (Component.name === 'Contact') {
+            hideLogo = true;
+        }
+        return hideLogo;
+    }
+    return (
+        <Navigation hideLogo={renderLogo()} inView={Component.name} navOptions={<NavOptions />} socialMediaUrls={socialMediaAccounts}>
+            <Component {...pageProps} />
+            <PageFooter />
+        </Navigation>
+    )
 }
