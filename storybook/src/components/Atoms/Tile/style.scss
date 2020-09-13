@@ -1,0 +1,53 @@
+@import '../../../styles/_variables.scss';
+
+.Tile {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    &__filter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: -webkit-repeating-radial-gradient(center center,rgba(0,0,0,.2),rgba(0,0,0,.2) 1px,transparent 0,transparent 100%);
+        background-size: 3px 3px;
+        &--back {
+            transition: all $elements-speed-normal ease;
+            background-color: rgba(0, 0, 0, 0);
+        }
+    }
+    &__image {
+        max-width: 100%;
+        height: auto;
+        vertical-align: top;
+        transition: all $elements-speed-normal ease;
+    }
+    &__content {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: all .2s ease;
+        h4 {
+            text-align: center;
+            color: #fff;
+            position: relative;
+            text-transform: uppercase;
+        }
+    }
+    &:hover {
+        .Tile__filter {
+            &--back {
+                background-color: rgba(0,0,0,.4);
+            }
+        }
+        .Tile__image {
+            transform: scale(1.2);
+        }
+        .Tile__content {
+            opacity: 1;
+        }
+    }
+}
