@@ -12,7 +12,7 @@ import '../styles/styles.scss';
 export default function MyApp({ Component, pageProps }) {
     const renderLogo = () => {
         let hideLogo = false;
-        if (Component.name === 'Contact') {
+        if (Component.name === 'Contact' || Component.name === 'About') {
             hideLogo = true;
         }
         return hideLogo;
