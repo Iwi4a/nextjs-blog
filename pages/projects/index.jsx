@@ -14,6 +14,7 @@ export async function getStaticProps() {
 const PageHeader = styles.section`
     margin: 0 0 80px;
     padding-top: 25px;
+    box-sizing: border-box;
     @media screen and (min-width: 768px) {
         display: flex;
         align-items: center;
@@ -25,16 +26,20 @@ const PageHeader = styles.section`
         padding: 0 15px;
         width: 100%;
         text-align: center;
+        box-sizing: border-box;
         &__title {
             max-width: 500px;
             margin: 0 auto;
             h1 {
-                font-size: 36px;
+                font-size: 26px;
                 font-weight: 700;
                 margin-bottom: 1em;
                 line-height: 1em;
                 position: relative;
                 padding: 0 0 30px;
+                @media screen and (min-width: 768px) {
+                    font-size: 36px;
+                }
                 &:after {
                     content: "";
                     display: block;
