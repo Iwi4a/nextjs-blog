@@ -1,0 +1,11 @@
+@import '../../../styles/_variables.scss';
+
+.SlideInTile {
+    opacity: 0;
+    top: 10px;
+    transition: $elements-speed-normal all ease-in-out;
+    &--onscreen {
+        opacity: 1;
+        top: 0;
+    }
+}

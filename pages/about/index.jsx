@@ -123,6 +123,7 @@ const About = (props) => {
                             <h1 className="about-header__title__header">{aboutHeader.title}</h1>
                         </div>
                         <div className="about-header__text" dangerouslySetInnerHTML={{ __html: aboutHeader.content }} />
+                        {/* TODO: Add JS ICONS */}
                     </div>
                 </PageHeaderTextWrapper>
             </HeroWithScrolldown>

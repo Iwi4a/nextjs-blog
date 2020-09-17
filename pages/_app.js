@@ -10,15 +10,16 @@ import '../styles/styles.scss';
 
 
 export default function MyApp({ Component, pageProps }) {
-    const renderLogo = () => {
-        let hideLogo = false;
-        if (Component.name === 'Contact' || Component.name === 'About') {
-            hideLogo = true;
+    const renderNavProps = () => {
+        return {
+            hideLogo: ['Contact', 'About', 'Projects'].includes(Component.name),
+            darkMenuIcon: ['Projects'].includes(Component.name),
+            inView: Component.name,
+            socialMediaUrls: socialMediaAccounts
         }
-        return hideLogo;
     }
     return (
-        <Navigation hideLogo={renderLogo()} inView={Component.name} navOptions={<NavOptions />} socialMediaUrls={socialMediaAccounts}>
+        <Navigation navOptions={<NavOptions />} {...renderNavProps()}>
             <Component {...pageProps} />
             <PageFooter />
         </Navigation>

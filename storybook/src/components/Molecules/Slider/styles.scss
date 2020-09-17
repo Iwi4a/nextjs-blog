@@ -38,4 +38,17 @@
             }
         }
     }
+    img {
+        max-width: 100%;
+        &:active,
+        &:focus {
+            outline: none;
+        }
+    }
+    div {
+        &:active,
+        &:focus {
+            outline: none;
+        }
+    }
 }

@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
 
-const Tile = ({ image, title, ...rest }) => {
+const Tile = ({ image, title, className, ...rest }) => {
     return (
-        <div className="Tile">
+        <div className={`Tile ${className}`} {...rest}>
             <img src={image} className="Tile__image" />
             <div className="Tile__filter"></div>
             <div className="Tile__filter Tile__filter--back"></div>
@@ -17,6 +17,10 @@ const Tile = ({ image, title, ...rest }) => {
 
 Tile.propTypes = {
     image: PropTypes.string,
+}
+
+Tile.defaultProps = {
+    className: '',
 }
 
 export default Tile;

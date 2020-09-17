@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.scss";
 import "./styles.scss";
 
 
-const Slider = ({ children, settings, ...rest}) => {
+const Slider = ({ children, settings, className, ...rest}) => {
 
     const sliderDefaultSettings = {
         dots: true,
@@ -25,7 +25,7 @@ const Slider = ({ children, settings, ...rest}) => {
         }
     }
     return (
-        <div className="Slider" {...rest}>
+        <div className={`Slider ${className}`} {...rest}>
             <SlickSlider { ...sliderSettings }>
                 {children}
             </SlickSlider>
@@ -35,10 +35,12 @@ const Slider = ({ children, settings, ...rest}) => {
 
 Slider.propTypes = {
     settings: PropTypes.object,
+    className: PropTypes.string,
 }
 
 Slider.defaultProps = {
     settings: {},
+    className: '',
 }
 
 export default Slider;

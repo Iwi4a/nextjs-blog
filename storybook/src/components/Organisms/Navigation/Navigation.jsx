@@ -6,7 +6,7 @@ import MenuIcon from '../../Atoms/MenuIcon/MenuIcon';
 import Sidebar from '../../Molecules/Sidebar/Sidebar';
 import './styles.scss';
 
-const Navigation = ({ children, navOptions, socialMediaUrls, hideLogo, inView, ...rest }) => {
+const Navigation = ({ children, navOptions, socialMediaUrls, hideLogo, darkMenuIcon, inView, ...rest }) => {
     const [isSidebarOpen, setSidebarState] = useState(false);
     const [isCloseButtonVisible, setCloseButtonVisibility] = useState(false);
     
@@ -38,7 +38,7 @@ const Navigation = ({ children, navOptions, socialMediaUrls, hideLogo, inView, .
     return (
         <div className={`Navigation ${isSidebarOpen ? 'Navigation--open' : ''}`} {...rest}>
             { hideLogo ? null : <Link href="/"><a><Logo className={`Navigation__logo`} /></a></Link> }
-            <MenuIcon isActive={isSidebarOpen} onClick={toggleSidebarHandler} />
+            <MenuIcon darkIcon={darkMenuIcon} isActive={isSidebarOpen} onClick={toggleSidebarHandler} />
             <Sidebar isSidebarOpen={isSidebarOpen} showCloseButton={isCloseButtonVisible} closeButtonHandler={toggleSidebarHandler} socialMediaUrls={socialMediaUrls}>
                 {navOptions}
             </Sidebar>
