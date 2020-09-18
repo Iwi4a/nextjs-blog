@@ -1,17 +1,6 @@
 <?php 
 
 //-------------------------------------------------------------------
-//REGISTERS SCRIPTS AND STYLES
-function wptuts_scripts_basic() {
-	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css' );
-	wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/style.css' );
-	
-	
-	wp_register_script( 'custom', get_template_directory_uri() . '/assets/js/app.min.js', array(jquery), null, true );
-	wp_enqueue_script( 'custom' );
-}
-add_action( 'wp_enqueue_scripts', 'wptuts_scripts_basic' );
-//-------------------------------------------------------------------
 //REGISTERS MENU
 if (function_exists('register_nav_menus')) {
 	register_nav_menus(array('primary' => 'Header Navigation'));
@@ -77,12 +66,6 @@ if(function_exists('register_sidebar')) {
 	//'before_widget' => '<div>',  OPTIONAL
 	//'after_widget' => '</div>',  OPTIONAL
 }
-
-//-------------------------------------------------------------------
-//WORDPRESS FOOTER TEXT
-function edit_wordpress_fotter_text($footer_text) {
-	$footer_text = '<span>Thank you for using <a target="_blank" href="http://www.ivelin.me/">Blank Theme</a> created by <a target="_blank" href="http://www.ivelin.me/">Ivelin</a> @ <a target="_blank" href="http://foundrydigital.co.uk">FoundryDigital</a></span>';
-	return $footer_text;}
 	
 //-------------------------------------------------------------------
 //BLOG EXCERPT
