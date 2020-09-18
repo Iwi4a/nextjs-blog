@@ -133,6 +133,35 @@ export async function getProjectPostsData() {
   return res;
 }
 
+export async function getPostsData() {
+  const res = await fetchAPI(`
+    query {
+      posts (last: 100) {
+        edges {
+          node {
+            id
+            title
+            slug
+            date
+            excerpt
+            tags {
+              edges {
+                node {
+                  name
+                }
+              }
+            }
+            acfBlogSingle {
+              articleLink
+            }
+          }
+        }
+      }     
+    }
+  `);
+  return res;
+}
+
 export async function getSingleProjectData(slug) {
   const res = await fetchAPI(`
     query {
@@ -158,6 +187,31 @@ export async function getSingleProjectData(slug) {
       }
     }
   `);
+  return res;
+}
+
+export async function getSinglePostData(slug) {
+  const res = await fetchAPI(`
+    query {
+      page(id: "blog", idType: URI) {
+        acfBlogPage {
+          blogImage {
+            mediaItemUrl
+          }
+          profileImage {
+            mediaItemUrl
+          }
+          profileText1
+          profileText2
+        }
+      }
+      post(id: "${slug}", idType: SLUG) {
+        title
+        content
+      }
+    }
+  `);
+
   return res;
 }
 

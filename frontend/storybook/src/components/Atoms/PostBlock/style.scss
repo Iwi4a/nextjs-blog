@@ -1,0 +1,46 @@
+@import '../../../styles/_variables.scss';
+
+.PostBlock {
+    border-bottom: 1px dotted #e8e8e8;
+    margin-bottom: 20px;
+    transition: all .2s ease-in-out;
+    padding: 0 15px 20px;
+    a {
+        text-decoration: none;
+    }
+    &__title {
+        font-size: 20px;
+        color: $post-block-text-color;
+        margin-bottom: .6em;
+    }
+    &__meta {
+        display: flex;
+        color: $post-block-text-color;
+        font-size: 100;
+        &__date {
+            width: 50%;
+        }
+        &__tags {
+            text-align: right;
+            width: 50%;
+            font-size: 13px;
+            span {
+                margin-left: 8px;
+            }
+        }
+    }
+    &__excerpt {
+        font-weight: 100;
+        color: $post-block-text-color;
+        .more {
+            color: $post-block-read-more-colour;
+        }
+    }
+    &:hover {
+        .PostBlock__excerpt {
+            .more {
+                color: $post-block-read-more-colour;
+            }
+        }
+    }
+}

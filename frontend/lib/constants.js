@@ -30,6 +30,11 @@ export const navigationOptions = [
     href: '/projects',
   },
   {
+    text: 'Blog',
+    as: '/blog',
+    href: '/blog',
+  },
+  {
     text: 'Contact',
     as: '/contact',
     href: '/contact',

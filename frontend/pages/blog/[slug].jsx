@@ -1,15 +1,15 @@
 import React from 'react';
-import { FixedBackground, Slider, Logo } from '../../storybook';
+import { FixedBackground, Logo } from '../../storybook';
 import Link from 'next/link';
-import { getProjectPostsData, getSingleProjectData } from '../../lib/api';
+import { getPostsData, getSinglePostData } from '../../lib/api';
 import styles from 'styled-components';
 import '../../styles/wordpress.scss';
 
 export async function getStaticPaths() {
-    const res = await getProjectPostsData();
-    const paths = res.data.projects.nodes.map((post) => ({
+    const res = await getPostsData();
+    const paths = res.data.posts.edges.map((post) => ({
         params: {
-            slug: post.slug
+            slug: post.node.slug
         }
     }));
 
@@ -17,9 +17,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    const res = await getSingleProjectData(params.slug);
+    const res = await getSinglePostData(params.slug);
 
-    return { props: { ...res.data.project } };
+    return { props: { header: res.data.page.acfBlogPage, page: res.data.post } };
 }
 
 const PageHeader = styles.div`
@@ -48,30 +48,28 @@ const PageHeader = styles.div`
 
 `;
 
-const ImageSlider = styles.section`
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 0 80px;
+const ContentWrapper = styles.section`
+    padding: 50px 15px;
+    @media screen and (min-width: 768px) {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 `;
 
 const SingleProject = (props) => {
     return (
         <div>
-            <FixedBackground image={props.acfProjectSingle.mockupHeader?.mediaItemUrl}>
+            <FixedBackground image={props.header.blogImage.mediaItemUrl}>
                 <PageHeader>
                     <Link href="/" as="/">
                         <a><Logo /></a>
                     </Link>
-                    <h1>{props.title}</h1>
+                    <h1>{props.page.title}</h1>
                 </PageHeader>
             </FixedBackground>
-            <ImageSlider>
-                <Slider>
-                    {props.acfProjectSingle.projectCarousel.map((slide, i) => {
-                        return <div key={i}><img src={slide.projectImage?.mediaItemUrl} /></div>
-                    })}
-                </Slider>
-            </ImageSlider>
+            <ContentWrapper>
+                <div dangerouslySetInnerHTML={{ __html: props.page.content }} />
+            </ContentWrapper>
         </div>
     )
 }

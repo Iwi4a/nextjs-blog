@@ -5,6 +5,7 @@ import Button from './src/components/Atoms/Button/Button';
 import MenuIcon from './src/components/Atoms/MenuIcon/MenuIcon';
 import MenuItem from './src/components/Atoms/MenuItem/MenuItem';
 import Thumbnail from './src/components/Atoms/Thumbnail/Thumbnail';
+import PostBlock from './src/components/Atoms/PostBlock/PostBlock';
 import FixedBackground from './src/components/Atoms/FixedBackground/FixedBackground';
 import { 
     TextInput,
@@ -29,6 +30,7 @@ export {
     MenuIcon,
     MenuItem,
     Thumbnail,
+    PostBlock,
     TextArea,
     TextInput,
     FixedBackground,
