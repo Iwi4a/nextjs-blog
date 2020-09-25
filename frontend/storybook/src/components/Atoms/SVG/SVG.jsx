@@ -18,6 +18,7 @@ import IconPointer from './icons/icon-pointer.svg';
 import IconShare from './icons/icon-share.svg';
 import IconViewAll from './icons/icon-view-all.svg';
 import IconWordPress from './icons/icon-wordpress.svg';
+import IconTwitter from './icons/icon-twitter.svg';
 
 export const Icons = {
     download: IconDownload,
@@ -37,7 +38,8 @@ export const Icons = {
     pointer: IconPointer,
     share: IconShare,
     viewAll: IconViewAll,
-    wordpress: IconWordPress
+    wordpress: IconWordPress,
+    twitter: IconTwitter,
 }
 
 const SVG = ({ icon, ...rest }) => {

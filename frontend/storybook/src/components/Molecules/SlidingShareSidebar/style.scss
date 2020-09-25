@@ -1,0 +1,6 @@
+@import '../../../styles/_variables.scss';
+
+.SlidingShareSidebar {
+    position: relative;
+    transition: $elements-speed-normal all ease-in-out;
+}

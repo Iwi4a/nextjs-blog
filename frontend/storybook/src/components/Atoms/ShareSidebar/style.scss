@@ -1,0 +1,28 @@
+@import '../../../styles/_variables.scss';
+
+.ShareSidebar {
+    max-width: 300px;
+    background-color: $share-sidebar-background;
+    &__image {
+        width: 100%;
+        height: 280px;
+        background-size: cover;
+        background-position: center center;
+    }
+    &__wrapper {
+        padding: 20px 15px;
+        &__text {
+            margin-bottom: 15px;
+        }
+        &__share-buttons {
+            > button {
+                margin-right: 10px;
+                transform: scale(0.8);
+                transition: $elements-speed-normal all ease-in-out;
+                &:hover {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}

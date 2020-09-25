@@ -12,6 +12,7 @@
         font-size: 20px;
         color: $post-block-text-color;
         margin-bottom: .6em;
+        display: inline-block;
     }
     &__meta {
         display: flex;
@@ -34,12 +35,28 @@
         color: $post-block-text-color;
         .more {
             color: $post-block-read-more-colour;
+            position: relative;
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                opacity: 0;
+                transition: $elements-speed-normal all ease-in-out;
+                border: 5px solid transparent;
+                transform: translate(100%, -50%);
+                border-left-color: $post-block-text-color;
+            }
         }
     }
     &:hover {
         .PostBlock__excerpt {
             .more {
-                color: $post-block-read-more-colour;
+                &:after {
+                    right: -10px;
+                    opacity: 1;
+                }
             }
         }
     }

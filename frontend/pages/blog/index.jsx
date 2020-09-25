@@ -73,13 +73,15 @@ class Blog extends Component {
                     <BlogContainer>
                         {this.props.posts.edges.map(post => {
                             return (
-                                <PostBlock
-                                    key={post.node.slug}
-                                    title={post.node.title}
-                                    href={`blog/${post.node.slug}`}
-                                    date={post.node.date}
-                                    tags={post.node.tags.edges}
-                                    excerpt={post.node.excerpt} />
+                                <>
+                                    <PostBlock
+                                        key={post.node.slug}
+                                        title={post.node.title}
+                                        href={`blog/${post.node.slug}`}
+                                        date={post.node.date}
+                                        tags={post.node.tags.edges}
+                                        excerpt={post.node.excerpt} />
+                                </>
                             )
                         })}
                     </BlogContainer>

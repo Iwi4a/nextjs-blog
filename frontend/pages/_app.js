@@ -12,7 +12,7 @@ import '../styles/styles.scss';
 export default function MyApp({ Component, pageProps }) {
     const renderNavProps = () => {
         return {
-            hideLogo: ['Contact', 'About', 'Projects', 'SingleProject', ].includes(Component.name),
+            hideLogo: ['Contact', 'About', 'Blog', 'Projects', 'SingleProject', ].includes(Component.name),
             darkMenuIcon: ['Projects'].includes(Component.name),
             inView: Component.name,
             socialMediaUrls: socialMediaAccounts
