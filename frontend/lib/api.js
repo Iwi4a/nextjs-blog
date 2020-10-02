@@ -261,6 +261,15 @@ export async function getBlogpageData() {
           }
           headerMsg
         }
+        acfBlogPage {
+          profileImage {
+            mediaItemUrl
+          }
+          blogImage {
+            mediaItemUrl
+          }
+          profileText1
+        }
       }
     }
   `);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Logo, FixedBackground, PostBlock } from '../../storybook';
+import { Logo, FixedBackground, PostBlock, SlidingShareSidebar } from '../../storybook';
 import Link from 'next/link';
 import { getBlogpageData, getPostsData } from '../../lib/api';
 import styles from 'styled-components';
@@ -15,8 +15,6 @@ export async function getStaticProps() {
         }
     }
 }
-
-
 
 const PageHeader = styles.div`
     position: relative;
@@ -45,49 +43,69 @@ const PageHeader = styles.div`
 `;
 
 const BlogContainer = styles.section`
-    max-width: 900px;
+    display: block;
+    max-width: 1400px;
     padding: 50px 0;
+    box-sizing: border-box;
+    margin: 0 auto;
     @media screen and (min-width: 768px) {
         padding: 50px;
+        display: flex;
+    }
+    .content {
+        width: 100%;
+        padding-right: 15px;
+        @media screen and (min-width: 768px) {
+            width: calc(100% - 300px);
+        }
+        @media screen and (min-width: 1200px) {
+            padding-right: 50px;
+        }
+    }
+    .sidebar {
+        max-width: 300px;
+        margin: 0 auto;
     }
 `;
 
-class Blog extends Component {
-    render() {
-        return (
-            <>
-        
-                <FixedBackground
-                    image={this.props.page.acfHeader.headerImage.mediaItemUrl}
-                    style={{
-                        backgroundSize: "auto",
-                    }}
-                    height="500px">
-                        <PageHeader>
-                            <Link href="/" as="/">
-                                <a><Logo /></a>
-                            </Link>
-                            <h1>{this.props.page.title}</h1>
-                        </PageHeader>
-                </FixedBackground>
-                    <BlogContainer>
-                        {this.props.posts.edges.map(post => {
-                            return (
-                                <>
-                                    <PostBlock
-                                        key={post.node.slug}
-                                        title={post.node.title}
-                                        href={`blog/${post.node.slug}`}
-                                        date={post.node.date}
-                                        tags={post.node.tags.edges}
-                                        excerpt={post.node.excerpt} />
-                                </>
-                            )
-                        })}
-                    </BlogContainer>
-            </>
-        )
-    }
+const Blog = (props) => {
+    return (
+        <>
+            <FixedBackground
+                image={props.page.acfHeader.headerImage.mediaItemUrl}
+                style={{
+                    backgroundSize: "auto",
+                }}
+                height="500px">
+                    <PageHeader>
+                        <Link href="/" as="/">
+                            <a><Logo /></a>
+                        </Link>
+                        <h1>{props.page.title}</h1>
+                    </PageHeader>
+            </FixedBackground>
+            <BlogContainer>
+                <div className="content">
+                    {props.posts.edges.map(post => {
+                        return (
+                            <div key={post.node.slug}>
+                                <PostBlock
+                                    
+                                    title={post.node.title}
+                                    href={`blog/${post.node.slug}`}
+                                    date={post.node.date}
+                                    tags={post.node.tags.edges}
+                                    excerpt={post.node.excerpt} />
+                            </div>
+                        )
+                    })}
+                </div>
+                <div className="sidebar">
+                    <SlidingShareSidebar image={props.page.acfBlogPage.profileImage.mediaItemUrl} text={props.page.acfBlogPage.profileText1} url={'http://google.com'} />
+                </div>
+            </BlogContainer>
+        </>
+    )
 }
 
 export default Blog;

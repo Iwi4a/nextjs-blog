@@ -9,9 +9,16 @@ const SlidingShareSidebar = (props) => {
     let slidingElTop;
 
     useEffect(() => {
-        window.addEventListener('scroll', scrollHandler);
-        if (slidingEl.current != undefined && slidingEl.current != null) {
-            slidingElTop = getElementCoordinates(slidingEl.current);
+        if (window !== undefined) {
+            window.addEventListener('scroll', scrollHandler);
+            window.addEventListener('resize', resetHandler);
+            if (slidingEl.current != undefined && slidingEl.current != null) {
+                slidingElTop = getElementCoordinates(slidingEl.current);
+            }
+        }
+        return () => {
+            window.removeEventListener('scroll', scrollHandler);
+            window.removeEventListener('resize', resetHandler);
         }
     }, []);
 
@@ -26,6 +33,12 @@ const SlidingShareSidebar = (props) => {
         }
     }
 
+    const resetHandler = () => {
+        setTopValue(0);
+        setTimeout(() => {
+            scrollHandler();
+        }, 1000);
+    }
     return (
         <div ref={slidingEl} style={{ top: `${topValue}px` }} className="SlidingShareSidebar">
             <ShareSidebar {...props} />

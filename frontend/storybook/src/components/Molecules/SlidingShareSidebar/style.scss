@@ -3,4 +3,6 @@
 .SlidingShareSidebar {
     position: relative;
     transition: $elements-speed-normal all ease-in-out;
+    display: inline-block;
+    vertical-align: top;
 }
