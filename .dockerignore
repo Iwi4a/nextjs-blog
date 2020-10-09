@@ -1,0 +1,8 @@
+.git/
+.gitignore
+nginx/
+./web/.gitignore
+./web/node_modules/
+./web/.env
+./web/.next
+./web/.env.local

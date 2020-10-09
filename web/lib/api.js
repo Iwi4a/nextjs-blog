@@ -1,6 +1,6 @@
 async function fetchAPI(query) {
     const headers = { 'Content-Type': 'application/json' };
-    const res = await fetch(`${process.env.WP_URL}:${process.env.WP_PORT}/${process.env.WP_GRAPHQL}`, {
+    const res = await fetch(`${process.env.WP_URL}/${process.env.WP_GRAPHQL}`, {
         method: 'POST',
         headers,
         body: JSON.stringify({
