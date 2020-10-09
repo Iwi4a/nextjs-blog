@@ -2,6 +2,7 @@ import React from 'react';
 import { FixedBackground, Logo } from '../../storybook';
 import Link from 'next/link';
 import { getPostsData, getSinglePostData } from '../../lib/api';
+import BlogWrapper from '../../components/BlogWrapper';
 import styles from 'styled-components';
 import '../../styles/wordpress.scss';
 
@@ -48,17 +49,9 @@ const PageHeader = styles.div`
 
 `;
 
-const ContentWrapper = styles.section`
-    padding: 50px 15px;
-    @media screen and (min-width: 768px) {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-`;
-
 const SingleProject = (props) => {
     return (
-        <div>
+        <>
             <FixedBackground image={props.header.blogImage.mediaItemUrl}>
                 <PageHeader>
                     <Link href="/" as="/">
@@ -67,10 +60,10 @@ const SingleProject = (props) => {
                     <h1>{props.page.title}</h1>
                 </PageHeader>
             </FixedBackground>
-            <ContentWrapper>
+            <BlogWrapper sidebarImage={props.header.profileImage.mediaItemUrl} sidebarText={props.header.profileText1}>
                 <div dangerouslySetInnerHTML={{ __html: props.page.content }} />
-            </ContentWrapper>
-        </div>
+            </BlogWrapper>
+        </>
     )
 }
 

@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import { Logo, FixedBackground, PostBlock, SlidingShareSidebar } from '../../storybook';
-import Link from 'next/link';
+import React from 'react';
+import { Logo, FixedBackground, PostBlock } from '../../storybook';
 import { getBlogpageData, getPostsData } from '../../lib/api';
+import BlogWrapper from '../../components/BlogWrapper';
+import Link from 'next/link';
 import styles from 'styled-components';
 
 
@@ -42,32 +43,6 @@ const PageHeader = styles.div`
 
 `;
 
-const BlogContainer = styles.section`
-    display: block;
-    max-width: 1400px;
-    padding: 50px 0;
-    box-sizing: border-box;
-    margin: 0 auto;
-    @media screen and (min-width: 768px) {
-        padding: 50px;
-        display: flex;
-    }
-    .content {
-        width: 100%;
-        padding-right: 15px;
-        @media screen and (min-width: 768px) {
-            width: calc(100% - 300px);
-        }
-        @media screen and (min-width: 1200px) {
-            padding-right: 50px;
-        }
-    }
-    .sidebar {
-        max-width: 300px;
-        margin: 0 auto;
-    }
-`;
-
 const Blog = (props) => {
     return (
         <>
@@ -84,26 +59,21 @@ const Blog = (props) => {
                         <h1>{props.page.title}</h1>
                     </PageHeader>
             </FixedBackground>
-            <BlogContainer>
-                <div className="content">
-                    {props.posts.edges.map(post => {
-                        return (
-                            <div key={post.node.slug}>
-                                <PostBlock
-                                    
-                                    title={post.node.title}
-                                    href={`blog/${post.node.slug}`}
-                                    date={post.node.date}
-                                    tags={post.node.tags.edges}
-                                    excerpt={post.node.excerpt} />
-                            </div>
-                        )
-                    })}
-                </div>
-                <div className="sidebar">
-                    <SlidingShareSidebar image={props.page.acfBlogPage.profileImage.mediaItemUrl} text={props.page.acfBlogPage.profileText1} url={'http://google.com'} />
-                </div>
-            </BlogContainer>
+            <BlogWrapper sidebarImage={props.page.acfBlogPage.profileImage.mediaItemUrl} sidebarText={props.page.acfBlogPage.profileText1}>
+                {props.posts.edges.map(post => {
+                    return (
+                        <div key={post.node.slug}>
+                            <PostBlock
+                                
+                                title={post.node.title}
+                                href={`blog/${post.node.slug}`}
+                                date={post.node.date}
+                                tags={post.node.tags.edges}
+                                excerpt={post.node.excerpt} />
+                        </div>
+                    )
+                })}
+            </BlogWrapper>
         </>
     )
 }
