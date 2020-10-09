@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import NavOptions from '../components/NavOptions';
 import PageFooter from '../components/PageFooter';
 import { Navigation } from '../storybook';
@@ -10,11 +11,12 @@ import '../styles/styles.scss';
 
 
 export default function MyApp({ Component, pageProps }) {
+    const router = useRouter();
     const renderNavProps = () => {
         return {
-            hideLogo: ['Contact', 'About', 'Blog', 'Projects', 'SingleProject', ].includes(Component.name),
-            darkMenuIcon: ['Projects'].includes(Component.name),
-            inView: Component.name,
+            hideLogo: ['/about', '/blog', '/blog/[slug]', '/projects', '/projects/[slug]', '/contact', ].includes(router.route),
+            darkMenuIcon: ['/projects'].includes(router.route),
+            inView: router.route,
             socialMediaUrls: socialMediaAccounts
         }
     }
