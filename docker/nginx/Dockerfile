@@ -4,9 +4,13 @@ FROM nginx:alpine
 # Remove any existing config files
 RUN rm /etc/nginx/conf.d/*
 
+ARG WEB_URL
+
+ENV WEB_URL=$WEB_URL
+
 # Copy config files
 # *.conf files in conf.d/ dir get included in main config
-COPY ./default.conf /etc/nginx/conf.d/
+COPY ./docker/nginx/default.conf /etc/nginx/conf.d/
 
 # Expose the listening port
 EXPOSE 80
