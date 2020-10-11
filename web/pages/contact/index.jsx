@@ -146,7 +146,7 @@ class Contact extends Component {
                             })}
                         </ul>
                         <div className="CVText" dangerouslySetInnerHTML={{ __html: CVText}} />
-                        <Button type="main" icon="download" target="_blank" href={CVURL}>
+                        <Button btnType="main" icon="download" target="_blank" href={CVURL}>
                             DOWNLOAD CV
                         </Button>
                     </div>

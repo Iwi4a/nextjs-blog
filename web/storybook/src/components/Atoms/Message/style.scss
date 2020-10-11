@@ -1,0 +1,15 @@
+.Message {
+    padding: 8px 15px;
+    &--pending {
+        background-color: #fffac7;
+        border: 3px solid #ffea00;
+    }
+    &--success {
+        background-color: #b0ffa6;
+        border: 3px solid #12a300;
+    }
+    &--error {
+        background-color: #ffb8b3;
+        border: 3px solid #ff1100;
+    }
+}

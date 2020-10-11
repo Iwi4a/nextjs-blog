@@ -108,7 +108,7 @@ class Projects extends Component {
                             <div dangerouslySetInnerHTML={{ __html: this.props.page.page.acfProjects.projectHeaderText }} />
                         </div>
                     </div>
-                    <Slider>
+                    <Slider settings={{ arrows: false }}> 
                         { this.props.page.page.acfProjects.mockups.map(slide => {
                                 return (
                                     <div key={slide.mockupImage.mediaItemUrl}><img src={slide.mockupImage.mediaItemUrl} /></div>

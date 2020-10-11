@@ -22,11 +22,11 @@ class ContactSectionComponent extends Component {
             <ContactSection>
                 <Container>
                     {/* <h4>{this.props.children}</h4> */}
-                    <Button type="main" icon="download" target="_blank" href={this.props.cv}>
+                    <Button btnType="main" icon="download" target="_blank" href={this.props.cv}>
                         DOWNLOAD CV
                     </Button>
                     <Link href="/contact">
-                        <Button type="secondary" icon="contact">
+                        <Button btnType="secondary" icon="contact">
                             Contact
                         </Button>
                     </Link>

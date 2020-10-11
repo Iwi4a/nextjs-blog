@@ -4,15 +4,15 @@ import SVG from './../SVG/SVG';
 
 const ButtonTemplate = (args, text) => <Button {...args}> { text }</Button>
 
-export const LinkButton = () => <Button type="main" href="https://google.com">Link Test Worked</Button>
+export const LinkButton = () => <Button btnType="main" href="https://google.com">Link Test Worked</Button>
 
-export const TextButton = () => <Button type="main">Test Worked</Button>
+export const TextButton = () => <Button btnType="main">Test Worked</Button>
 
-export const IconButton = () => <Button type="main" icon="download">Test Worked</Button>
+export const IconButton = () => <Button btnType="main" icon="download">Test Worked</Button>
 
-export const SecondaryButton = () => <Button type="secondary">Test Worked</Button>
+export const SecondaryButton = () => <Button btnType="secondary">Test Worked</Button>
 
-export const SecondaryButtonWithIcon = () => <Button type="secondary" icon="contact">Test Worked</Button>
+export const SecondaryButtonWithIcon = () => <Button btnType="secondary" icon="contact">Test Worked</Button>
 
 
 export default { title: 'Atoms/Button' }

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, useField } from 'formik';
 import style from 'styled-components';
 import * as Yup from 'yup';
 import { 
     Button,
+    Message,
     TextArea as StyledTextArea,
     TextInput as StyledTextInput
 } from '../storybook';
@@ -70,6 +71,32 @@ const TextArea = ({ label, ...props }) => {
 }
 
 const ContactForm = () => {
+    const [formState, setFormState] = useState({
+        submitted: false,
+        submitting: false,
+        error: false,
+    });
+    
+    const handleOnSubmit = async values => {
+        const res = await fetch('/api/mail', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: values.name,
+                email: values.email,
+                telephone: values.telephone,
+                message: values.message
+            })
+        })
+        const data = await res;
+        if (data.status > 300) {
+            setFormState({ ...formState, submitting: false, error: true });
+        } else {
+            setFormState({ ...formState, submitting: false, submitted: true });
+        }
+    }
     return (
         <FormWrapper>
             <Formik
@@ -92,44 +119,60 @@ const ContactForm = () => {
                             .required('Telephone number is required'),
                         message: Yup.string()
                 })}
-                onSubmit = {(values, { setSubmitting }) => {
-                    //Handle submission
-                    console.log(values);
+                onSubmit = {(values) => {
+                    //Handle submissionn
+                    setFormState({ ...formState, submitting: true });
+                    handleOnSubmit(values);
                 }}
-            >
+            >  
                 <Form>
-                    <FieldsWrapper>
-                        <TextInput 
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Name"/>
-                        <TextInput 
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="E-mail"/>
-                        <TextInput 
-                            type="text"
-                            id="telephone"
-                            name="telephone"
-                            placeholder="Telephone"/>
-                    </FieldsWrapper>
-                    <TextArea
-                        placeholder="Message"
-                        style={{
-                            minHeight: '120px',
-                            resize: 'none',
-                        }}
-                        name="message"
-                        id="message" />
-                    <SubmitButtonWrapper>
-                        <Button type="secondary" icon="contact">Submit</Button>
-                    </SubmitButtonWrapper>
+                    <IsFormSubmittedHOC formState={formState}>
+                        <FieldsWrapper>
+                            <TextInput 
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Name"/>
+                            <TextInput 
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="E-mail"/>
+                            <TextInput 
+                                type="text"
+                                id="telephone"
+                                name="telephone"
+                                placeholder="Telephone"/>
+                        </FieldsWrapper>
+                        <TextArea
+                            placeholder="Message"
+                            style={{
+                                minHeight: '120px',
+                                resize: 'none',
+                            }}
+                            name="message"
+                            id="message" />
+                        <SubmitButtonWrapper>
+                            <Button btnType="secondary" icon="contact" type="submit">Submit</Button>
+                        </SubmitButtonWrapper>
+                    </IsFormSubmittedHOC>
                 </Form>
             </Formik>
         </FormWrapper>
     )
+}
+
+const IsFormSubmittedHOC = ({ children, formState }) => {
+    if (formState.submitting) {
+        return <Message type="pending">Your message is on its way to me...</Message>
+    }
+    if (formState.submitted) {
+        return <Message type="success">Your message has been submitted. I will get back to you very soon!</Message>
+    }
+    if (formState.error) {
+        return <Message type="error">There has been an error submitting your message. Please, try again.</Message>
+    }
+    return children;
 }
 
 export default ContactForm

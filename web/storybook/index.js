@@ -1,6 +1,7 @@
 import SVG from './src/components/Atoms/SVG/SVG';
 import Tile from './src/components/Atoms/Tile/Tile';
 import Logo from './src/components/Atoms/Logo/Logo';
+import Message from './src/components/Atoms/Message/Message';
 import Button from './src/components/Atoms/Button/Button';
 import MenuIcon from './src/components/Atoms/MenuIcon/MenuIcon';
 import MenuItem from './src/components/Atoms/MenuItem/MenuItem';
@@ -27,6 +28,7 @@ import Footer from './src/components/Organisms/Footer/Footer';
 export {
     SVG,
     Logo,
+    Message,
     Tile,
     Button,
     MenuIcon,
