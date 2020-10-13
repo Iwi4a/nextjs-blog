@@ -5,12 +5,16 @@ services:
         image: mysql:5.7
         container_name: ivelin_mysql
         environment:
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
             DOCKER_COMPOSE_YML_LOCATION: ${PWD}
         restart: always
         volumes:
             - ./backend/database/db.sql:/docker-entrypoint-initdb.d/init.sql # prepopulate database
             - db_data:/var/lib/mysql # persist database data inside docker storage
-                
+
     phpmyadmin:
         container_name: ivelin_phpmyadmin
         depends_on:
@@ -21,8 +25,10 @@ services:
             - "8080:80"
         environment:
             PMA_HOST: db
-            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
             DOCKER_COMPOSE_YML_LOCATION: ${PWD}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
 
     wordpress:
         container_name: ivelin_wordpress
@@ -41,12 +47,12 @@ services:
             WORDPRESS_TABLE_PREFIX: ${WORDPRESS_TABLE_PREFIX}
         volumes:
             - ./backend/wp-content:/var/www/html/wp-content
-            
+
     nextjs:
         container_name: ivelin_web
         depends_on:
             - wordpress
-        environment: 
+        environment:
             WP_URL: wordpress
             WP_GRAPHQL: "index.php?graphql"
         ports:
@@ -60,7 +66,7 @@ services:
             timeout: 5s
             retries: 50
     nginx:
-        build: 
+        build:
             context: ./
             dockerfile: ./docker/nginx/Dockerfile
             args:
@@ -68,7 +74,7 @@ services:
         container_name: ivelin_nginx
         depends_on:
             nextjs:
-                condition: service_healthy 
+                condition: service_healthy
         ports:
             - 80:80
 

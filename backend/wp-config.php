@@ -20,19 +20,21 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-if(file_exists('wp-config-local.php')) {
+if (file_exists( dirname( __FILE__ ) . 'wp-config-local.php')) {
 	include('wp-config-local.php');
+} else if (file_exists( dirname( __FILE__ ) . 'wp-config-prod.php')) {
+	include('wp-config-prod.php');
 } else {
-	define('DB_NAME', 'MYSQL_DATABASE');
+	define('DB_NAME', 'backend');
 
 	/** MySQL database username */
-	define('DB_USER', 'MYSQL_USER');
+	define('DB_USER', 'root');
 
 	/** MySQL database password */
-	define('DB_PASSWORD', 'MYSQL_PASSWORD');
+	define('DB_PASSWORD', 'root');
 
 	/** MySQL hostname */
-	define('DB_HOST', 'wordpress_db:3306');
+	define('DB_HOST', 'localhost');
 
 	/** Database Charset to use in creating database tables. */
 	define('DB_CHARSET', 'utf8');
