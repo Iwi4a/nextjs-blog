@@ -1,3 +1,5 @@
+version: 2.1
+
 jobs:
   deploy:
     docker:
@@ -10,7 +12,6 @@ jobs:
 
 # Orchestrate our job run sequence
 workflows:
-  version: 2.1
   deploy_to_server:
     jobs:
       - deploy
