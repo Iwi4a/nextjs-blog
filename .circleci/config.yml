@@ -11,6 +11,7 @@ deploy:
 
 # Orchestrate our job run sequence
 workflows:
-  deploy:
+  version: 2.1
+  deploy_to_server:
     jobs:
       - deploy
