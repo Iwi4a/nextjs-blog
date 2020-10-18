@@ -51,4 +51,4 @@ EXPOSE 3000
 
 # Wait for Wordpress to load and Run npm build + start script with PM2 when container starts
 # CMD tail -f /dev/null # Use in case of debugging
-CMD bash -c "./script/wait-for-it.sh --timeout=25 ${WP_URL}:80 && npm run build && pm2-runtime npm -- start"
+CMD bash -c "./script/wait-for-it.sh ${WP_URL}:80 -- echo 'Wordpress Is Up!!' && npm run build && pm2-runtime npm -- start"
