@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Formik, Form, useField } from 'formik';
+import ReCAPTCHA from "react-google-recaptcha";
 import style from 'styled-components';
 import * as Yup from 'yup';
 import { 
@@ -8,7 +9,6 @@ import {
     TextArea as StyledTextArea,
     TextInput as StyledTextInput
 } from '../storybook';
-
 
 const FormWrapper = style.div`
     max-width: 1200px;
@@ -70,13 +70,22 @@ const TextArea = ({ label, ...props }) => {
     )
 }
 
-const ContactForm = () => {
+const ContactForm = (props) => {
     const [formState, setFormState] = useState({
         submitted: false,
         submitting: false,
         error: false,
     });
-    
+    const [verified, setVerification] = useState(false);
+
+    const handleVerify = () => {
+        setVerification(true);
+    }
+
+    const handleExpiredVerify = () => {
+        setVerification(false);
+    }
+
     const handleOnSubmit = async values => {
         const res = await fetch('/api/mail', {
             method: 'POST',
@@ -97,6 +106,12 @@ const ContactForm = () => {
             setFormState({ ...formState, submitting: false, submitted: true });
         }
     }
+    const onKeyDown = (keyEvent) => {
+        if ((keyEvent.charCode || keyEvent.keyCode) === 13) {
+            keyEvent.preventDefault();
+        }
+    }
+
     return (
         <FormWrapper>
             <Formik
@@ -125,7 +140,7 @@ const ContactForm = () => {
                     handleOnSubmit(values);
                 }}
             >  
-                <Form>
+                <Form onKeyDown={onKeyDown}>
                     <IsFormSubmittedHOC formState={formState}>
                         <FieldsWrapper>
                             <TextInput 
@@ -152,13 +167,17 @@ const ContactForm = () => {
                             }}
                             name="message"
                             id="message" />
+                        <div style={{ textAlign: 'right' }}>
+                            <ReCAPTCHA style={{ display: 'inline-block' }} sitekey={process.env.RECAPTCHA_SITE_KEY} onChange={handleVerify} onExpired={handleExpiredVerify} />
+                        </div>
                         <SubmitButtonWrapper>
-                            <Button btnType="secondary" icon="contact" type="submit">Submit</Button>
+                            <Button btnType="secondary" icon="contact" disabled={!verified} type="submit">Submit</Button>
                         </SubmitButtonWrapper>
                     </IsFormSubmittedHOC>
                 </Form>
             </Formik>
         </FormWrapper>
+
     )
 }
 

@@ -49,6 +49,8 @@ EXPOSE 3000
 # The node user is provided in the Node.js Alpine base image
 # USER node
 
+RUN bash -c "./script/wait-for-it.sh ${WP_URL}:80 -- echo 'Wordpress Is Up!!' && npm run build"
+
 # Wait for Wordpress to load and Run npm build + start script with PM2 when container starts
 # CMD tail -f /dev/null # Use in case of debugging
-CMD bash -c "./script/wait-for-it.sh ${WP_URL}:80 -- echo 'Wordpress Is Up!!' && npm run build && pm2-runtime npm -- start"
+CMD "pm2-runtime npm -- start"

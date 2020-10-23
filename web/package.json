@@ -25,6 +25,7 @@
     "nextjs-fonts": "0.22.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-google-recaptcha": "2.1.0",
     "react-on-screen": "2.1.1",
     "react-scroll-to": "3.0.0-beta.6",
     "react-share": "4.3.0",
