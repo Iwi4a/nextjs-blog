@@ -21,6 +21,7 @@ const StyledFieldGroup = style.div`
     margin-bottom: 15px;
     width: 100%;
 `;
+
 const StyledError = style.p`
     display: block;
     color: red;
