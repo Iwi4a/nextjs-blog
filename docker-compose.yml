@@ -72,6 +72,8 @@ services:
             dockerfile: ./docker/nginx/Dockerfile
             args:
                 WEB_URL: nextjs
+        environment: 
+            CERTBOT_EMAIL: ${ADMIN_EMAIL}
         container_name: ivelin_nginx
         depends_on:
             nextjs:
@@ -80,13 +82,24 @@ services:
             - 80:80
             - 443:443
         volumes:
-            - ./ssl/certbot/conf:/etc/letsencrypt
-            - ./ssl/certbot/www:/var/www/certbot
+            - ./docker/nginx/conf.d:/etc/nginx/conf.d
+            - ./ssl/certbot/conf:/etc/nginx/ssl
+            - ./ssl/certbot/data:/var/www/certbot
+        healthcheck:
+            test: ["CMD", "curl", "-f", "http://0.0.0.0:80"]
+            interval: 15s
+            timeout: 3s
+            start_period: 60s
+            retries: 5
     certbot:
-        image: certbot/certbot
+        image: certbot/certbot:latest
+        command: certonly --webroot --webroot-path=/var/www/certbot --email ivelin.iliev@hotmail.com --agree-tos --no-eff-email -d ivelin.me -d www.ivelin.me
+        depends_on:
+            nginx:
+                condition: service_healthy
         volumes:
             - ./ssl/certbot/conf:/etc/letsencrypt
-            - ./ssl/certbot/www:/var/www/certbot
-
+            - ./ssl/certbot/logs:/var/log/letsencrypt
+            - ./ssl/certbot/data:/var/www/certbot
 volumes:
     db_data: {}

@@ -1,3 +1,4 @@
 .env
 backend/wp-config-local.php
 backend/wp-config-prod.php
+ssl/*
