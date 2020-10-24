@@ -1,9 +1,9 @@
 # WordPress MySQL database migration
 #
-# Generated: Saturday 17. October 2020 08:56 UTC
+# Generated: Saturday 24. October 2020 11:11 UTC
 # Hostname: localhost
 # Database: `backend`
-# URL: //167.99.90.58:8000
+# URL: //109.228.35.215:8000
 # Path: /Users/ivelin.iliev/Repos/hacks/nextjs-blog/backend
 # Tables: wp_portfolio2vcommentmeta, wp_portfolio2vcomments, wp_portfolio2vlinks, wp_portfolio2voptions, wp_portfolio2vpostmeta, wp_portfolio2vposts, wp_portfolio2vsmush_dir_images, wp_portfolio2vterm_relationships, wp_portfolio2vterm_taxonomy, wp_portfolio2vtermmeta, wp_portfolio2vterms, wp_portfolio2vusermeta, wp_portfolio2vusers, wp_portfolio2vyoast_seo_links, wp_portfolio2vyoast_seo_meta
 # Table Prefix: wp_portfolio2v
@@ -156,15 +156,15 @@ CREATE TABLE `wp_portfolio2voptions` (
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`),
   KEY `autoload` (`autoload`)
-) ENGINE=InnoDB AUTO_INCREMENT=17819 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17874 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 #
 # Data contents of table `wp_portfolio2voptions`
 #
 INSERT INTO `wp_portfolio2voptions` ( `option_id`, `option_name`, `option_value`, `autoload`) VALUES
-(1, 'siteurl', 'http://167.99.90.58:8000', 'yes'),
-(2, 'home', 'http://167.99.90.58:8000', 'yes'),
+(1, 'siteurl', 'http://109.228.35.215:8000', 'yes'),
+(2, 'home', 'http://109.228.35.215:8000', 'yes'),
 (3, 'blogname', 'Ivelin Iliev | Front End Web Developer in London', 'yes'),
 (4, 'blogdescription', 'Ivelin - Developing responsive websites.', 'yes'),
 (5, 'users_can_register', '0', 'yes'),
@@ -271,7 +271,7 @@ INSERT INTO `wp_portfolio2voptions` ( `option_id`, `option_name`, `option_value`
 (105, 'widget_media_video', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (106, 'widget_tag_cloud', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (107, 'widget_nav_menu', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
-(108, 'cron', 'a:10:{i:1602927220;a:1:{s:34:"wp_privacy_delete_old_export_files";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1602928327;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1602953240;a:1:{s:19:"wpseo-reindex-links";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1602956019;a:1:{s:32:"recovery_mode_clean_expired_keys";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1602956020;a:1:{s:25:"delete_expired_transients";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1602963517;a:1:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1602963518;a:2:{s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1602963718;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1603128819;a:1:{s:30:"wp_site_health_scheduled_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"weekly";s:4:"args";a:0:{}s:8:"interval";i:604800;}}}s:7:"version";i:2;}', 'yes'),
+(108, 'cron', 'a:10:{i:1603539220;a:1:{s:34:"wp_privacy_delete_old_export_files";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1603558040;a:1:{s:19:"wpseo-reindex-links";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1603560819;a:1:{s:32:"recovery_mode_clean_expired_keys";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1603560820;a:1:{s:25:"delete_expired_transients";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1603568317;a:1:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1603568318;a:2:{s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1603568518;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1603619527;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1603733619;a:1:{s:30:"wp_site_health_scheduled_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"weekly";s:4:"args";a:0:{}s:8:"interval";i:604800;}}}s:7:"version";i:2;}', 'yes'),
 (109, 'theme_mods_twentyseventeen', 'a:2:{s:18:"custom_css_post_id";i:-1;s:16:"sidebars_widgets";a:2:{s:4:"time";i:1513037258;s:4:"data";a:4:{s:19:"wp_inactive_widgets";a:0:{}s:9:"sidebar-1";a:0:{}s:9:"sidebar-2";a:0:{}s:9:"sidebar-3";a:0:{}}}}', 'yes'),
 (139, 'current_theme', 'Blank Theme', 'yes'),
 (140, 'theme_mods_blank-theme', 'a:4:{i:0;b:0;s:18:"custom_css_post_id";i:-1;s:18:"nav_menu_locations";a:0:{}s:16:"sidebars_widgets";a:2:{s:4:"time";i:1593972420;s:4:"data";a:2:{s:19:"wp_inactive_widgets";a:0:{}s:14:"footer-widgets";a:0:{}}}}', 'yes'),
@@ -319,7 +319,7 @@ INSERT INTO `wp_portfolio2voptions` ( `option_id`, `option_name`, `option_value`
 (1913, 'smush_global_stats', 'a:9:{s:11:"size_before";i:0;s:10:"size_after";i:0;s:7:"percent";d:0;s:5:"human";s:5:"0.0 B";s:5:"bytes";i:0;s:12:"total_images";i:0;s:14:"resize_savings";i:0;s:12:"resize_count";i:0;s:18:"conversion_savings";i:0;}', 'no'),
 (1918, 'dir_smush_stats', 'a:2:{s:9:"dir_smush";a:2:{s:5:"total";s:1:"0";s:9:"optimised";i:0;}s:14:"combined_stats";a:0:{}}', 'no'),
 (1919, 'skip-smush-setup', '1', 'no'),
-(2200, 'wpmdb_usage', 'a:2:{s:6:"action";s:8:"savefile";s:4:"time";i:1602925017;}', 'no'),
+(2200, 'wpmdb_usage', 'a:2:{s:6:"action";s:8:"savefile";s:4:"time";i:1603537910;}', 'no'),
 (2430, 'widget_mc4wp_form_widget', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (2431, 'mc4wp_version', '4.1.11', 'yes'),
 (2434, 'mc4wp_flash_messages', 'a:0:{}', 'no'),
@@ -5719,7 +5719,7 @@ CREATE TABLE `wp_portfolio2vposts` (
   KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`)
-) ENGINE=InnoDB AUTO_INCREMENT=515 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=516 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 #
@@ -6138,9 +6138,9 @@ INSERT INTO `wp_portfolio2vposts` ( `ID`, `post_author`, `post_date`, `post_date
 (508, 1, '2020-08-22 15:51:57', '2020-08-22 14:51:57', 'I am creating an elegantly connected, digitally enhanced, and well-communicated world.', 'Contact', '', 'inherit', 'closed', 'closed', '', '14-revision-v1', '', '', '2020-08-22 15:51:57', '2020-08-22 14:51:57', '', 14, 'http://localhost:8888/ivelin.me/14-revision-v1/', 0, 'revision', '', 0),
 (509, 1, '2020-08-22 15:56:22', '2020-08-22 14:56:22', 'I am creating an elegantly connected, digitally enhanced, and well-communicated world.', 'Contact', '', 'inherit', 'closed', 'closed', '', '14-revision-v1', '', '', '2020-08-22 15:56:22', '2020-08-22 14:56:22', '', 14, 'http://localhost:8888/ivelin.me/14-revision-v1/', 0, 'revision', '', 0),
 (511, 1, '2020-09-11 19:00:24', '2020-09-11 18:00:24', 'I am creating an elegantly connected, digitally enhanced, and well-communicated world.', 'Contact', '', 'inherit', 'closed', 'closed', '', '14-revision-v1', '', '', '2020-09-11 19:00:24', '2020-09-11 18:00:24', '', 14, 'http://localhost:8888/ivelin.me/14-revision-v1/', 0, 'revision', '', 0),
-(512, 1, '2020-10-13 22:00:00', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2020-10-13 22:00:00', '0000-00-00 00:00:00', '', 0, 'http://167.99.90.58:8000/?p=512', 0, 'post', '', 0),
-(513, 1, '2020-10-13 22:00:50', '2020-10-13 21:00:50', 'I am creating an elegantly connected, digitally enhanced, and well-communicated world.', 'Contact', '', 'inherit', 'closed', 'closed', '', '14-revision-v1', '', '', '2020-10-13 22:00:50', '2020-10-13 21:00:50', '', 14, 'http://167.99.90.58:8000/14-revision-v1/', 0, 'revision', '', 0),
-(514, 1, '2020-10-13 22:02:16', '2020-10-13 21:02:16', 'I am creating an elegantly connected, digitally enhanced, and well-communicated world.', 'Contact', '', 'inherit', 'closed', 'closed', '', '14-revision-v1', '', '', '2020-10-13 22:02:16', '2020-10-13 21:02:16', '', 14, 'http://167.99.90.58:8000/14-revision-v1/', 0, 'revision', '', 0) ;
+(513, 1, '2020-10-13 22:00:50', '2020-10-13 21:00:50', 'I am creating an elegantly connected, digitally enhanced, and well-communicated world.', 'Contact', '', 'inherit', 'closed', 'closed', '', '14-revision-v1', '', '', '2020-10-13 22:00:50', '2020-10-13 21:00:50', '', 14, 'http://109.228.35.215:8000/14-revision-v1/', 0, 'revision', '', 0),
+(514, 1, '2020-10-13 22:02:16', '2020-10-13 21:02:16', 'I am creating an elegantly connected, digitally enhanced, and well-communicated world.', 'Contact', '', 'inherit', 'closed', 'closed', '', '14-revision-v1', '', '', '2020-10-13 22:02:16', '2020-10-13 21:02:16', '', 14, 'http://109.228.35.215:8000/14-revision-v1/', 0, 'revision', '', 0),
+(515, 1, '2020-10-24 12:11:27', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2020-10-24 12:11:27', '0000-00-00 00:00:00', '', 0, 'http://109.228.35.215:8000/?p=515', 0, 'post', '', 0) ;
 
 #
 # End of data contents of table `wp_portfolio2vposts`
@@ -6417,7 +6417,7 @@ INSERT INTO `wp_portfolio2vusermeta` ( `umeta_id`, `user_id`, `meta_key`, `meta_
 (12, 1, 'wp_portfolio2vuser_level', '10'),
 (13, 1, 'dismissed_wp_pointers', 'addtoany_settings_pointer'),
 (14, 1, 'show_welcome_panel', '1'),
-(16, 1, 'wp_portfolio2vdashboard_quick_press_last_post_id', '512'),
+(16, 1, 'wp_portfolio2vdashboard_quick_press_last_post_id', '515'),
 (17, 1, 'community-events-location', 'a:1:{s:2:"ip";s:2:"::";}'),
 (18, 1, 'managenav-menuscolumnshidden', 'a:5:{i:0;s:11:"link-target";i:1;s:11:"css-classes";i:2;s:3:"xfn";i:3;s:11:"description";i:4;s:15:"title-attribute";}'),
 (19, 1, 'metaboxhidden_nav-menus', 'a:2:{i:0;s:22:"add-post-type-projects";i:1;s:12:"add-post_tag";}'),
