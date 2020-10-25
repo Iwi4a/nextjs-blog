@@ -72,8 +72,6 @@ services:
             dockerfile: ./docker/nginx/Dockerfile
             args:
                 WEB_URL: nextjs
-        environment: 
-            CERTBOT_EMAIL: ${ADMIN_EMAIL}
         container_name: ivelin_nginx
         depends_on:
             nextjs:
