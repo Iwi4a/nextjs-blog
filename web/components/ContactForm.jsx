@@ -169,7 +169,7 @@ const ContactForm = (props) => {
                             name="message"
                             id="message" />
                         <div style={{ textAlign: 'right' }}>
-                            <ReCAPTCHA style={{ display: 'inline-block' }} sitekey={process.env.RECAPTCHA_SITE_KEY} onChange={handleVerify} onExpired={handleExpiredVerify} />
+                            <ReCAPTCHA style={{ display: 'inline-block' }} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={handleVerify} onExpired={handleExpiredVerify} />
                         </div>
                         <SubmitButtonWrapper>
                             <Button btnType="secondary" icon="contact" disabled={!verified} type="submit">Submit</Button>
