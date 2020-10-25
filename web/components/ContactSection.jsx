@@ -26,9 +26,11 @@ class ContactSectionComponent extends Component {
                         DOWNLOAD CV
                     </Button>
                     <Link href="/contact">
-                        <Button btnType="secondary" icon="contact">
-                            Contact
-                        </Button>
+                        <a>
+                            <Button btnType="secondary" icon="contact">
+                                Contact
+                            </Button>
+                        </a>
                     </Link>
                 </Container>
             </ContactSection>

@@ -130,7 +130,9 @@ class Projects extends Component {
                         )
                     })}
                 </ProjectsContainer>
-                <ContactSection />
+                <ContactSection cv={props.contactSection.acfContact.cvLink.mediaItemUrl}>
+                    {props.contactSection.acfContact.contactFooterText}
+                </ContactSection>
             </div>
         )
     }

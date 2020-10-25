@@ -104,6 +104,14 @@ export async function getProjectpageData() {
           }
         }
       }
+      contactSection: page(id: "cG9zdDoxNA==") {
+        acfContact {
+          contactFooterText
+          cvLink {
+            mediaItemUrl
+          }
+        }
+      }
     }
   `);
   return res;

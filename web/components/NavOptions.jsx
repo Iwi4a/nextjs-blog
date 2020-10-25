@@ -13,7 +13,9 @@ const NavOptions = () => {
           return (
             <li key={option.text}>
               <Link href={option.href} as={option.as}>
-                <MenuItem title={option.text} active={router.pathname === option.href} />
+                <a>
+                  <MenuItem title={option.text} active={router.pathname === option.href} />
+                </a>
               </Link>
             </li>
           )
