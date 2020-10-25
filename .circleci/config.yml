@@ -6,7 +6,7 @@ jobs:
     # specify the version you desire here (you might not want node)
     - image: circleci/node:7.10
     steps:
-      - run: ssh -oStrictHostKeyChecking=no -v $DROPLET_USER@$DROPLET_IP "cd www && ./run.sh"
+      - run: ssh -oStrictHostKeyChecking=no -v $DROPLET_USER@$DROPLET_IP "cd www && chmod +x ./run.sh && ./run.sh"
 
 
 # Orchestrate our job run sequence
