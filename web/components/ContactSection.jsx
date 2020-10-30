@@ -14,6 +14,9 @@ const Container = styles.div`
     padding: 40px 15px 0;
     margin: 0 auto;
     text-align: center;
+    .btn {
+        margin-bottom: 10px;
+    }
 `;
 
 class ContactSectionComponent extends Component {
