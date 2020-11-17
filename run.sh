@@ -1,4 +1,4 @@
 git reset --hard
-git clean
+git clean -df
 git fetch
 docker-compose up -d --build
