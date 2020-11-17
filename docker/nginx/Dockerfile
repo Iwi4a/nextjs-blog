@@ -5,7 +5,7 @@ FROM nginx:alpine
 RUN rm /etc/nginx/conf.d/*
 
 COPY ./docker/nginx/conf.d/default.conf /etc/nginx/conf.d/
-COPY ./cert/ssl/live/ /etc/nginx/ssl/live/
+COPY ./cert/ /etc/nginx/
 
 ARG WEB_URL
 
