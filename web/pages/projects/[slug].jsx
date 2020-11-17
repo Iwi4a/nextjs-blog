@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { getProjectPostsData, getSingleProjectData } from '../../lib/api';
 import styles from 'styled-components';
 import '../../styles/wordpress.scss';
+import Head from 'next/head';
 
 export async function getStaticPaths() {
     const res = await getProjectPostsData();
@@ -57,6 +58,9 @@ const ImageSlider = styles.section`
 const SingleProject = (props) => {
     return (
         <div>
+            <Head>
+                <title>{props.title} - Ivelin Iliev | Front End Web Developer in London</title>
+            </Head>
             <FixedBackground image={props.acfProjectSingle.mockupHeader?.mediaItemUrl}>
                 <PageHeader>
                     <Link href="/" as="/">

@@ -5,6 +5,7 @@ import { getPostsData, getSinglePostData } from '../../lib/api';
 import BlogWrapper from '../../components/BlogWrapper';
 import styles from 'styled-components';
 import '../../styles/wordpress.scss';
+import Head from 'next/head';
 
 export async function getStaticPaths() {
     const res = await getPostsData();
@@ -52,6 +53,11 @@ const PageHeader = styles.div`
 const SingleProject = (props) => {
     return (
         <>
+            <Head>
+                <title>
+                    {props.page.title} - Ivelin Iliev | Front End Web Developer in London
+                </title>
+            </Head>
             <FixedBackground image={props.header.blogImage.mediaItemUrl}>
                 <PageHeader>
                     <Link href="/" as="/">

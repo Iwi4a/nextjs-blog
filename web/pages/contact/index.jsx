@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Head from 'next/head';
 import ContactForm from '../../components/ContactForm';
 import { Button, FixedBackground, Logo } from '../../storybook';
 import { getContactpageData } from '../../lib/api';
@@ -119,6 +120,9 @@ class Contact extends Component {
         const CVURL = this.props.page.acfContact.cvLink.mediaItemUrl;
         return (
             <>
+                <Head>
+                    <title>Contact - Ivelin Iliev | Share your idea of project or just say hi ...</title>
+                </Head>
                 <FixedBackground
                     image={pageHeader.image}
                     style={{

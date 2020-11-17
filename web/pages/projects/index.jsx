@@ -4,6 +4,7 @@ import { Logo, Tile, Slider } from '../../storybook';
 import { getProjectpageData, getProjectPostsData } from '../../lib/api';
 import ContactSection from '../../components/ContactSection';
 import styles from 'styled-components';
+import Head from 'next/head';
 
 export async function getStaticProps() {
     const pageData = await getProjectpageData();
@@ -98,6 +99,9 @@ class Projects extends Component {
     render() {
         return (
             <div>
+                <Head>
+                    <title>Projects - Ivelin Iliev | Front End Web Developer in London</title>
+                </Head>
                 <PageHeader>
                     <div className="page-header-container">
                         <Link href="/" as="/">

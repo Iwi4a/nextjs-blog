@@ -4,7 +4,7 @@ import TimelineSection from '../../components/TimelineSection';
 import ContactSection from '../../components/ContactSection';
 import { Logo, HeroWithScrolldown } from '../../storybook';
 import styles from 'styled-components';
-
+import Head from 'next/head';
 
 export async function getStaticProps() {
     const res = await getAboutpageData();
@@ -111,6 +111,11 @@ const About = (props) => {
     }
     return (
         <div>
+            <Head>
+                <title>
+                    About Ivelin Iliev | Front End Web Developer in London
+                </title>
+            </Head>
             <HeroWithScrolldown image={ aboutHeader.background }>
                 <PageHeaderDarkerFilter />
                 <PageHeaderTextWrapper>

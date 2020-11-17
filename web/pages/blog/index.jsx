@@ -2,9 +2,9 @@ import React from 'react';
 import { Logo, FixedBackground, PostBlock } from '../../storybook';
 import { getBlogpageData, getPostsData } from '../../lib/api';
 import BlogWrapper from '../../components/BlogWrapper';
+import Head from 'next/head';
 import Link from 'next/link';
 import styles from 'styled-components';
-
 
 export async function getStaticProps() {
     const page = await getBlogpageData();
@@ -46,6 +46,11 @@ const PageHeader = styles.div`
 const Blog = (props) => {
     return (
         <>
+            <Head>
+                <title>
+                    Blog - Ivelin Iliev | Front End Web Developer in London
+                </title>
+            </Head>
             <FixedBackground
                 image={props.page.acfHeader.headerImage.mediaItemUrl}
                 style={{
