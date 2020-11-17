@@ -81,23 +81,13 @@ services:
             - 443:443
         volumes:
             - ./docker/nginx/conf.d:/etc/nginx/conf.d
-            - ./ssl/certbot/conf:/etc/nginx/ssl
-            - ./ssl/certbot/data:/var/www/certbot
+            - ssl_data:/etc/nginx/ssl # persist database data inside docker storage
         healthcheck:
             test: ["CMD", "curl", "-f", "http://0.0.0.0:80"]
             interval: 15s
             timeout: 3s
             start_period: 60s
             retries: 5
-    certbot:
-        image: certbot/certbot:latest
-        command: certonly --webroot -w /var/www/certbot --email ivelin.iliev@hotmail.com --agree-tos --no-eff-email -d ivelin.me -d www.ivelin.me -d assets.ivelin.me
-        depends_on:
-            nginx:
-                condition: service_healthy
-        volumes:
-            - ./ssl/certbot/conf:/etc/letsencrypt
-            - ./ssl/certbot/logs:/var/log/letsencrypt
-            - ./ssl/certbot/data:/var/www/certbot
 volumes:
     db_data: {}
+    ssl_data: {}
