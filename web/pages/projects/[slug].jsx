@@ -2,7 +2,7 @@ import React from 'react';
 import { FixedBackground, Slider, Logo } from '../../storybook';
 import Link from 'next/link';
 import { getProjectPostsData, getSingleProjectData } from '../../lib/api';
-import styles from 'styled-components';
+import styled from 'styled-components';
 import '../../styles/wordpress.scss';
 import Head from 'next/head';
 
@@ -23,7 +23,7 @@ export async function getStaticProps({ params }) {
     return { props: { ...res.data.project } };
 }
 
-const PageHeader = styles.div`
+const PageHeader = styled.div`
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -49,10 +49,11 @@ const PageHeader = styles.div`
 
 `;
 
-const ImageSlider = styles.section`
+const ImageSlider = styled.section`
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 0 80px;
+    overflow: hidden;
 `;
 
 const SingleProject = (props) => {

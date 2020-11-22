@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Formik, Form, useField } from 'formik';
 import ReCAPTCHA from "react-google-recaptcha";
-import style from 'styled-components';
+import styled from 'styled-components';
 import * as Yup from 'yup';
 import { 
     Button,
@@ -10,19 +10,19 @@ import {
     TextInput as StyledTextInput
 } from '../storybook';
 
-const FormWrapper = style.div`
+const FormWrapper = styled.div`
     max-width: 1200px;
     margin: 0 auto;
 `;
 
-const StyledFieldGroup = style.div`
+const StyledFieldGroup = styled.div`
     position: relative;
     padding-top: 20px;
     margin-bottom: 15px;
     width: 100%;
 `;
 
-const StyledError = style.p`
+const StyledError = styled.p`
     display: block;
     color: red;
     font-size: 10px;
@@ -32,7 +32,7 @@ const StyledError = style.p`
     margin: 0;
 `;
 
-const FieldsWrapper = style.div`
+const FieldsWrapper = styled.div`
     @media screen and (min-width: 768px) {
         display: flex;
         flex-flow: row nowrap;
@@ -40,7 +40,7 @@ const FieldsWrapper = style.div`
     }
 `;
 
-const SubmitButtonWrapper = style.div`
+const SubmitButtonWrapper = styled.div`
     text-align: right;
     margin-top: 25px;
 `;

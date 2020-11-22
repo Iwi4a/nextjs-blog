@@ -3,16 +3,17 @@ import Link from 'next/link';
 import { Logo, Tile, Slider } from '../../storybook';
 import { getProjectpageData, getProjectPostsData } from '../../lib/api';
 import ContactSection from '../../components/ContactSection';
-import styles from 'styled-components';
+import styled from 'styled-components';
 import Head from 'next/head';
 
 export async function getStaticProps() {
+    debugger
     const pageData = await getProjectpageData();
     const projectPosts = await getProjectPostsData();
     return { props: { page: pageData.data, projects: projectPosts.data.projects.nodes } }; 
 };
 
-const PageHeader = styles.section`
+const PageHeader = styled.section`
     margin: 0 0 80px;
     padding-top: 25px;
     box-sizing: border-box;
@@ -76,11 +77,12 @@ const PageHeader = styles.section`
     }
 `;
 
-const ProjectsContainer = styles.section`
+const ProjectsContainer = styled.section`
     display: block;
     columns: 2;
     padding: 0 15px;
     margin: 0 auto;
+    overflow: hidden;
     @media screen and (min-width: 992px) {
         columns: 3;
     }

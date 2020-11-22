@@ -4,7 +4,7 @@ import { getBlogpageData, getPostsData } from '../../lib/api';
 import BlogWrapper from '../../components/BlogWrapper';
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from 'styled-components';
+import styled from 'styled-components';
 
 export async function getStaticProps() {
     const page = await getBlogpageData();
@@ -17,7 +17,7 @@ export async function getStaticProps() {
     }
 }
 
-const PageHeader = styles.div`
+const PageHeader = styled.div`
     position: relative;
     top: 50%;
     transform: translateY(-50%);

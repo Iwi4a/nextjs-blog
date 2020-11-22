@@ -3,7 +3,7 @@ import Head from 'next/head';
 import ContactForm from '../../components/ContactForm';
 import { Button, FixedBackground, Logo } from '../../storybook';
 import { getContactpageData } from '../../lib/api';
-import style from 'styled-components';
+import styled from 'styled-components';
 
 
 export async function getStaticProps() {
@@ -15,7 +15,7 @@ export async function getStaticProps() {
     }
 }
 
-const PageHeaderTextWrapper = style.div`
+const PageHeaderTextWrapper = styled.div`
     position: relative;
     padding: 0 15px;
     margin: 0 auto;
@@ -43,7 +43,7 @@ const PageHeaderTextWrapper = style.div`
         }
     }
 `;
-const AboutContainer = style.section`
+const AboutContainer = styled.section`
     max-width: 1200px;
     padding: 50px 15px;
     margin: 0 auto;
@@ -95,7 +95,7 @@ const AboutContainer = style.section`
         margin-left: -10px;
     }
 `;
-const FormContainer = style.section`
+const FormContainer = styled.section`
     padding: 20px 15px 40px;
     background-color: #f8f5f2;
     .title-wrapper {

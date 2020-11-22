@@ -3,7 +3,7 @@ import { getAboutpageData } from '../../lib/api';
 import TimelineSection from '../../components/TimelineSection';
 import ContactSection from '../../components/ContactSection';
 import { Logo, HeroWithScrolldown } from '../../storybook';
-import styles from 'styled-components';
+import styled from 'styled-components';
 import Head from 'next/head';
 
 export async function getStaticProps() {
@@ -11,7 +11,7 @@ export async function getStaticProps() {
     return { props: { ...res.data } }; 
 };
 
-const PageHeaderTextWrapper = styles.div`
+const PageHeaderTextWrapper = styled.div`
     color: white;
     position: relative;
     width: 100%;
@@ -71,7 +71,7 @@ const PageHeaderTextWrapper = styles.div`
     }
 `;
 
-const WorkAndExperienceSection = styles.section`
+const WorkAndExperienceSection = styled.section`
     background-color: #f8f5f2;
     padding: 50px 15px 60px;
     text-align: center;
@@ -93,7 +93,7 @@ const WorkAndExperienceSection = styles.section`
     }
 `;
 
-const PageHeaderDarkerFilter = styles.div`
+const PageHeaderDarkerFilter = styled.div`
     position: absolute;
     left: 0;
     top: 0;

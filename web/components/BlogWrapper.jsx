@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from 'styled-components';
+import styled from 'styled-components';
 import { SlidingShareSidebar } from '../storybook';
 
-const BlogContentWrapper = styles.section`
+const BlogContentWrapper = styled.section`
     display: block;
     max-width: 1400px;
     padding: 50px 0;
@@ -19,6 +19,9 @@ const BlogContentWrapper = styles.section`
         img {
             max-width: 100%;
             height: auto;
+        }
+        pre {
+            overflow: auto;
         }
         @media screen and (min-width: 768px) {
             width: calc(100% - 300px);

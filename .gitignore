@@ -1,4 +1,7 @@
 .env
+ssl/*
+
+# WP FILES
 backend/wp-config-local.php
 backend/wp-config-prod.php
-ssl/*
+backend/wp-content/themes/blank-theme/style.css

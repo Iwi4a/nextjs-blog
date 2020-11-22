@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import { Button } from '../storybook';
-import styles from 'styled-components';
+import styled from 'styled-components';
 
 
-const ContactSection = styles.section`
+const ContactSection = styled.section`
     padding: 50px 0 80px;
 `;
 
-const Container = styles.div`
+const Container = styled.div`
     max-width: 1200px;
     border-top: 1px solid #ccc;
     padding: 40px 15px 0;

@@ -3,7 +3,7 @@ import { FixedBackground, Logo } from '../../storybook';
 import Link from 'next/link';
 import { getPostsData, getSinglePostData } from '../../lib/api';
 import BlogWrapper from '../../components/BlogWrapper';
-import styles from 'styled-components';
+import styled from 'styled-components';
 import '../../styles/wordpress.scss';
 import Head from 'next/head';
 
@@ -24,7 +24,7 @@ export async function getStaticProps({ params }) {
     return { props: { header: res.data.page.acfBlogPage, page: res.data.post } };
 }
 
-const PageHeader = styles.div`
+const PageHeader = styled.div`
     position: relative;
     top: 50%;
     transform: translateY(-50%);
