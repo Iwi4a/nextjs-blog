@@ -36,12 +36,12 @@ const PostBlock = ({title, date, tags, excerpt, href, ...rest }) => {
     }
     return (
         <div className="PostBlock" {...rest}>
-                    { makeLink(<h3 className="PostBlock__title">{title}</h3>) }
-                    <div className="PostBlock__meta">
-                        <div className="PostBlock__meta__date">{humaniseDate}</div>
-                        <div className="PostBlock__meta__tags">{tags.map(tag => <span>{tag.node.name}</span>)}</div>
-                    </div>
-                    { makeLink(<div className="PostBlock__excerpt" dangerouslySetInnerHTML={{ __html: excerpt }} />) }
+            { makeLink(<h3 className="PostBlock__title">{title}</h3>) }
+            <div className="PostBlock__meta">
+                <div className="PostBlock__meta__date">{humaniseDate}</div>
+                <div className="PostBlock__meta__tags">{tags.map(tag => <span key={tag.node.name}>{tag.node.name}</span>)}</div>
+            </div>
+            { makeLink(<div className="PostBlock__excerpt" dangerouslySetInnerHTML={{ __html: excerpt }} />) }
         </div>
     )
 }

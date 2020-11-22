@@ -69,7 +69,6 @@ const Blog = (props) => {
                     return (
                         <div key={post.node.slug}>
                             <PostBlock
-                                
                                 title={post.node.title}
                                 href={`blog/${post.node.slug}`}
                                 date={post.node.date}
