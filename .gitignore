@@ -5,3 +5,6 @@ ssl/*
 backend/wp-config-local.php
 backend/wp-config-prod.php
 backend/wp-content/themes/blank-theme/style.css
+
+#CERTIFICATES
+data/certbot/conf/*
