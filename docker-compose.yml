@@ -81,12 +81,20 @@ services:
             - 443:443
         volumes:
             - ./docker/nginx/conf.d:/etc/nginx/conf.d
-            - ./docker/nginx/cert/ssl:/etc/nginx/ssl # persist database data inside docker storage
+            # - ./docker/nginx/cert/ssl:/etc/nginx/ssl # persist database data inside docker storage
+            - ./data/certbot/conf:/etc/letsencrypt
+            - ./data/certbot/www:/var/www/certbot
         healthcheck:
             test: ["CMD", "curl", "-f", "http://0.0.0.0:80"]
             interval: 15s
             timeout: 3s
             start_period: 60s
             retries: 5
+    certbot:
+        image: certbot/certbot
+        volumes:
+            - ./data/certbot/conf:/etc/letsencrypt
+            - ./data/certbot/www:/var/www/certbot
+        entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 volumes:
     db_data: {}
