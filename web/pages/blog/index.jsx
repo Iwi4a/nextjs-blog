@@ -53,9 +53,6 @@ const Blog = (props) => {
             </Head>
             <FixedBackground
                 image={props.page.acfHeader.headerImage.mediaItemUrl}
-                style={{
-                    backgroundSize: "auto",
-                }}
                 height="500px">
                     <PageHeader>
                         <Link href="/" as="/">

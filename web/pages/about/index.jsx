@@ -116,7 +116,7 @@ const About = (props) => {
                     About Ivelin Iliev | Front End Web Developer in London
                 </title>
             </Head>
-            <HeroWithScrolldown image={ aboutHeader.background }>
+            <HeroWithScrolldown image={ aboutHeader.background } style={{ backgroundSize: 'cover', }}>
                 <PageHeaderDarkerFilter />
                 <PageHeaderTextWrapper>
                     <div>

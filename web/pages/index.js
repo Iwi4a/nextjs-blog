@@ -14,7 +14,7 @@ export async function getStaticProps() {
 const Index = (props) => {
   return (
     <div>
-        <HomepageHero image={props.page.acfHeader.headerImage.mediaItemUrl} title={props.page.acfHome.headerTitle} style={{ backgroundPosition: '0 100%' }} />
+        <HomepageHero image={props.page.acfHeader.headerImage.mediaItemUrl} title={props.page.acfHome.headerTitle} style={{ backgroundPosition: '0 100%', backgroundSize: 'cover' }} />
         <ThumbnailsCollection collection={props.page.acfHome.frontThumbnails} />
         <ContactSection cv={props.contactSection.acfContact.cvLink.mediaItemUrl}>
           {props.contactSection.acfContact.contactFooterText}

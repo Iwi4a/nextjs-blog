@@ -125,10 +125,7 @@ class Contact extends Component {
                 </Head>
                 <FixedBackground
                     image={pageHeader.image}
-                    style={{
-                        backgroundSize: "auto",
-                    }}
-                    height="60vh">
+                    height="500px">
                         <PageHeaderTextWrapper>
                             <Logo />
                             <h1 dangerouslySetInnerHTML={{ __html: pageHeader.message }} />
@@ -163,7 +160,7 @@ class Contact extends Component {
                     image={contactBottomBackgroundImage}
                     style={{
                         backgroundPosition: "0 100%",
-                        backgroundSize: "auto"
+                        backgroundSize: "contain"
                     }}
                     height="200px" />
             </>

@@ -6,7 +6,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 0 0;
-    background-size: cover;
+    background-size: auto;
     min-height: 300px;
     overflow: hidden;
     z-index: 2;
@@ -23,5 +23,8 @@
             background-image: repeating-radial-gradient(center center,rgba(0,0,0,.2),rgba(0,0,0,.2) 1px,transparent 0,transparent 100%);
             background-size: 3px 3px;   
         }
+    }
+    @media screen and (min-width: 1920px) {
+        background-size: contain;
     }
 }
