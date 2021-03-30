@@ -12,13 +12,13 @@ import {
     TextInput,
     TextArea
 } from './src/components/Atoms/FormFields/FormFields';
-import ShareSidebar from './src/components/Atoms/ShareSidebar/ShareSidebar';
+import ImageSidebar from './src/components/Atoms/ImageSidebar/ImageSidebar';
 
 import Timeline from './src/components/Molecules/Timeline/Timeline';
 import Slider from './src/components/Molecules/Slider/Slider';
 import SlideInTile from './src/components/Molecules/SlideInTile/SlideInTile';
 import HeroWithScrolldown from './src/components/Molecules/HeroWithScrolldown/HeroWithScrolldown';
-import SlidingShareSidebar from './src/components/Molecules/SlidingShareSidebar/SlidingShareSidebar';
+import SlidingImageSidebar from './src/components/Molecules/SlidingImageSidebar/SlidingImageSidebar';
 
 import Navigation from './src/components/Organisms/Navigation/Navigation';
 import HomepageHero from './src/components/Organisms/HomepageHero/HomepageHero';
@@ -46,5 +46,5 @@ export {
     HomepageHero,
     HeroWithScrolldown,
     ThumbnailsCollection,
-    SlidingShareSidebar,
+    SlidingImageSidebar,
 }

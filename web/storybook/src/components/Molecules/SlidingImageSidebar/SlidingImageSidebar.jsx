@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-import ShareSidebar from '../../Atoms/ShareSidebar/ShareSidebar';
+import ImageSidebar from '../../Atoms/ImageSidebar/ImageSidebar';
 import { getElementCoordinates } from '../../../../../lib/utilities';
 import './style.scss';
 
-const SlidingShareSidebar = (props) => {
+const SlidingImageSidebar = (props) => {
     const slidingEl = useRef();
     const [ topValue, setTopValue ] = useState(0);
     let slidingElTop;
@@ -40,10 +40,10 @@ const SlidingShareSidebar = (props) => {
         }, 1000);
     }
     return (
-        <div ref={slidingEl} style={{ top: `${topValue}px` }} className="SlidingShareSidebar">
-            <ShareSidebar {...props} />
+        <div ref={slidingEl} style={{ top: `${topValue}px` }} className="SlidingImageSidebar">
+            <ImageSidebar {...props} />
         </div>
     )
 }
 
-export default SlidingShareSidebar;
+export default SlidingImageSidebar;

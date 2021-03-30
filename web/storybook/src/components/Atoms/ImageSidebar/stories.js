@@ -1,4 +1,4 @@
-import ShareSidebar from './ShareSidebar';
+import ImageSidebar from './ImageSidebar';
 
 export const mockData = {
     image: "https://placedog.net/500",
@@ -6,8 +6,8 @@ export const mockData = {
     url: "https://placedog.net/500"
 }
 
-export const basicShareSidebar = () => <ShareSidebar {...mockData} />
+export const basicImageSidebar = () => <ImageSidebar {...mockData} />
 
 export default {
-    title: 'Atoms/ShareSidebar'
+    title: 'Atoms/ImageSidebar'
 }

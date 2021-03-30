@@ -1,6 +1,6 @@
 @import '../../../styles/_variables.scss';
 
-.ShareSidebar {
+.ImageSidebar {
     max-width: 300px;
     background-color: $share-sidebar-background;
     &__image {
@@ -14,8 +14,9 @@
         &__text {
             margin-bottom: 15px;
         }
-        &__share-buttons {
-            > button {
+        &__contact-buttons {
+            > a {
+                display: inline-block;
                 margin-right: 10px;
                 transform: scale(0.8);
                 transition: $elements-speed-normal all ease-in-out;

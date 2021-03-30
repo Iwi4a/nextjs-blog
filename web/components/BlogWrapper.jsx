@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SlidingShareSidebar } from '../storybook';
+import { SlidingImageSidebar } from '../storybook';
 
 const BlogContentWrapper = styled.section`
     display: block;
@@ -44,7 +44,7 @@ const BlogWrapper = ({ children, sidebarImage, sidebarText}) => {
                 {children}
             </div>
             <div className="sidebar">
-                <SlidingShareSidebar image={sidebarImage} text={sidebarText} url={pageLocation} />
+                <SlidingImageSidebar image={sidebarImage} text={sidebarText} url={pageLocation} />
             </div>
         </BlogContentWrapper>
     )

@@ -5,11 +5,11 @@ export const socialMediaAccounts = [
   },
   {
     id: 'github',
-    url: 'https://github.com/Iwi4a'
+    url: 'https://github.com/ivolondon'
   },
   {
-    id: 'facebook',
-    url: 'https://www.facebook.com/iwicha/'
+    id: 'twitter',
+    url: 'https://twitter.com/ThisIsIvoLondon'
   },
 ];
 
