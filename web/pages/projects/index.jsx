@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
-import { Logo, Tile, Slider } from '../../storybook';
+import { Logo, Tile, Slider, SVG } from '../../storybook';
+import { socialMediaAccounts } from '../../lib/constants';
 import { getProjectpageData, getProjectPostsData } from '../../lib/api';
 import ContactSection from '../../components/ContactSection';
 import styled from 'styled-components';
 import Head from 'next/head';
 
 export async function getStaticProps() {
-    debugger
     const pageData = await getProjectpageData();
     const projectPosts = await getProjectPostsData();
     return { props: { page: pageData.data, projects: projectPosts.data.projects.nodes } }; 
@@ -32,6 +32,9 @@ const PageHeader = styled.section`
         &__title {
             max-width: 500px;
             margin: 0 auto;
+            @media screen and (min-width: 768px) {
+                margin: 0 auto 0 50px;
+            }
             h1 {
                 font-size: 26px;
                 font-weight: 700;
@@ -60,6 +63,15 @@ const PageHeader = styled.section`
             }
             @media screen and (min-width: 1200px) {
                 padding-left: 25px;
+            }
+            a {
+                display: inline-block;
+                margin-right: 5px;
+                transform: scale(0.8);
+                transition: 0.2s ease-in-out all;
+                &:hover {
+                    transform: scale(1);
+                }
             }
         }
         @media screen and (min-width: 1200px) {
@@ -99,6 +111,13 @@ const ProjectsContainer = styled.section`
 class Projects extends Component {
     
     render() {
+        const socialIcons = socialMediaAccounts.map(acc => {
+            return (
+                <a key={acc.id} target="_blank" href={acc.url}>
+                    <SVG icon={acc.id} />
+                </a>
+            );
+        })
         return (
             <div>
                 <Head>
@@ -112,6 +131,7 @@ class Projects extends Component {
                         <div className="page-header-container__title">
                             <h1>{this.props.page.page.acfProjects.projectHeaderTitle}</h1>
                             <div dangerouslySetInnerHTML={{ __html: this.props.page.page.acfProjects.projectHeaderText }} />
+                            { socialIcons }
                         </div>
                     </div>
                     <Slider settings={{ arrows: false }}> 
