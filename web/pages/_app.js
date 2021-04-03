@@ -8,8 +8,6 @@ import {
 } from '../lib/constants';
 import '../styles/styles.scss';
 
-
-
 export default function MyApp({ Component, pageProps }) {
     const router = useRouter();
     const renderNavProps = () => {

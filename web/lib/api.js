@@ -83,6 +83,13 @@ export async function getAboutpageData() {
           }
         }
       }
+      contactSection: page(id: "cG9zdDoxNA==") {
+        acfContact {
+          cvLink {
+            mediaItemUrl
+          }
+        }
+      }
     }
   `);
   return res;
